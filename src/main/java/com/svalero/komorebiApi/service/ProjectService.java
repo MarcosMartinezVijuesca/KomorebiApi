@@ -46,11 +46,11 @@ public class ProjectService {
                 .orElseThrow(ProjectNotFoundException::new);
     }
 
-    public ProjectOutDto add(long clubId, ProjectInDto swimmerInDto) throws SchoolNotFoundException {
+    public ProjectOutDto add(long clubId, ProjectInDto projectInDto) throws SchoolNotFoundException {
         School school = schoolRepository.findById(schoolId)
                 .orElseThrow(SchoolNotFoundException::new);
 
-        School school = modelMapper.map(projectInDto, Project.class);
+        Project project = modelMapper.map(projectInDto, Project.class);
         //si hubiese atributo de date swimmer.setRegistrationDate(LocalDate.now())-,
         project.setSchool(school);
         Project newProject = projectRepository.save(project);
@@ -60,10 +60,10 @@ public class ProjectService {
     }
 
     public ProjectOutDto modify(long projectId,ProjectInDto projectInDto) throws ProjectNotFoundException {
-        Project swimmer = projectRepository.findById(projectId)
+        Project project = projectRepository.findById(projectId)
                 .orElseThrow(ProjectNotFoundException::new);
 
-        modelMapper.map(projectInDto, swimmer);
+        modelMapper.map(projectInDto, project);
         projectRepository.save(project);
         return modelMapper.map(project, ProjectOutDto.class);
     }
