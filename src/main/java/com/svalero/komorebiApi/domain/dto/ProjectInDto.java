@@ -21,6 +21,4 @@ public class ProjectInDto {
     private int ods;
     private boolean active;
     private LocalDate startDate;
-
-
 }

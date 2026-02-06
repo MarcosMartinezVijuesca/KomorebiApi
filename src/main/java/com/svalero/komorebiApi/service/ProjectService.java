@@ -1,10 +1,13 @@
 package com.svalero.komorebiApi.service;
 
 import com.svalero.komorebiApi.domain.Project;
+import com.svalero.komorebiApi.domain.School;
 import com.svalero.komorebiApi.domain.dto.ProjectInDto;
 import com.svalero.komorebiApi.domain.dto.ProjectOutDto;
 import com.svalero.komorebiApi.exception.ProjectNotFoundException;
+import com.svalero.komorebiApi.exception.SchoolNotFoundException;
 import com.svalero.komorebiApi.repository.ProjectRepository;
+import com.svalero.komorebiApi.repository.SchoolRepository;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +49,7 @@ public class ProjectService {
                 .orElseThrow(ProjectNotFoundException::new);
     }
 
-    public ProjectOutDto add(long clubId, ProjectInDto projectInDto) throws SchoolNotFoundException {
+    public ProjectOutDto add(long schoolId, ProjectInDto projectInDto) throws SchoolNotFoundException {
         School school = schoolRepository.findById(schoolId)
                 .orElseThrow(SchoolNotFoundException::new);
 

@@ -28,10 +28,10 @@ public class Project {
     @Column(name= "start_date")
     private LocalDate startDate;
 
-    //@ManyToOne
-    //@JoinColumn(name= "school_id")
-    //@JsonBackReference(value = "schools_projects")
-    //private School school;
+    @ManyToOne
+    @JoinColumn(name= "school_id")
+    @JsonBackReference(value = "schools_projects")
+    private School school;
 
 
 }

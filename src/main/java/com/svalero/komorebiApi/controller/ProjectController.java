@@ -4,6 +4,7 @@ import com.svalero.komorebiApi.domain.Project;
 import com.svalero.komorebiApi.domain.dto.ProjectInDto;
 import com.svalero.komorebiApi.domain.dto.ProjectOutDto;
 import com.svalero.komorebiApi.exception.ProjectNotFoundException;
+import com.svalero.komorebiApi.exception.SchoolNotFoundException;
 import com.svalero.komorebiApi.service.ProjectService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
@@ -12,13 +13,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
-import org.springframework.web.ErrorResponse;
+import com.svalero.komorebiApi.domain.dto.ErrorResponse;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 @RestController
 public class ProjectController {
@@ -69,7 +71,7 @@ public class ProjectController {
     }
 
     @ExceptionHandler(ProjectNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleSwimmerNotFoundException(ProjectNotFoundException exception) {
+    public ResponseEntity<ErrorResponse> handleProjectNotFoundException(ProjectNotFoundException exception) {
         ErrorResponse error = ErrorResponse.generalError(404, exception.getMessage());
         logger.error(error.getMessage(), exception);
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
@@ -77,7 +79,7 @@ public class ProjectController {
     }
 
     @ExceptionHandler(SchoolNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleClubNotFoundException(SchoolNotFoundException exception) {
+    public ResponseEntity<ErrorResponse> handleSchoolNotFoundException(SchoolNotFoundException exception) {
         ErrorResponse error = ErrorResponse.generalError(404, exception.getMessage());
         logger.error(exception.getMessage(), exception);
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);

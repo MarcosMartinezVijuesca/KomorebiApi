@@ -22,10 +22,12 @@ public class ErrorResponse {
     }
 
     public static ErrorResponse generalError(int code, String message) {
+
         return new ErrorResponse(code, message);
     }
 
     public static ErrorResponse validationError(Map<String, String> errors) {
+
         return new ErrorResponse(errors);
     }
 }

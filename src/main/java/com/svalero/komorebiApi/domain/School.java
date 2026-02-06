@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Data
@@ -32,13 +33,13 @@ public class School {
     @Min(value = 1)
     private int students;
 
-    @Column(name = "is_public")
-    private boolean isPublic;
+    @Column(name = "public_school")
+    private boolean publicSchool;
 
     @Column(name = "register_date")
     private LocalDate registerDate;
 
-    /*@OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonBackReference
-    private List<Project> projects;*/
+    private List<Project> projects;
 }
