@@ -11,9 +11,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-
+import com.svalero.komorebiApi.domain.dto.ErrorResponse;
 import org.springframework.validation.FieldError;
-import org.springframework.web.ErrorResponse;
+
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
@@ -67,7 +67,7 @@ public class SchoolController {
 
 
     @ExceptionHandler(SchoolNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleClubNotFoundException(
+    public ResponseEntity<ErrorResponse> handleSchoolNotFoundException(
             SchoolNotFoundException exception) {
 
         ErrorResponse error = ErrorResponse.generalError(404, exception.getMessage());
@@ -101,4 +101,4 @@ public class SchoolController {
         return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
-}
+

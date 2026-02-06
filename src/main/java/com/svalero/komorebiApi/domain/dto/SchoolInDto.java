@@ -19,6 +19,6 @@ public class SchoolInDto {
     private String city;
     @Min(value = 1)
     private Long students;
-    private Boolean isPublic;
+    private boolean publicSchool;
     private LocalDate registerDate;
 }

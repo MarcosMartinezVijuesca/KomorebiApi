@@ -16,5 +16,5 @@ public class ProjectOutDto {
     private int ods;
     private boolean active;
     private LocalDate startDate;
-    private long clubId;
+    private long schoolId;
 }
