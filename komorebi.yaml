@@ -1,0 +1,486 @@
+openapi: 3.0.1
+info:
+  title: Komorebi API
+  description: API for managing schools and projects
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:8081'
+    description: Local Server
+paths:
+  # --- SCHOOLS ---
+  /schools:
+    get:
+      summary: Returns a list of schools
+      description: |
+        Returns a list of all available schools.
+        Allows filtering by name and city.
+      parameters:
+        - name: name
+          in: query
+          description: Filter by school name
+          required: false
+          schema:
+            type: string
+        - name: city
+          in: query
+          description: Filter by city
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SchoolOutDto'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    post:
+      summary: Register a new school
+      description: Creates a new school in the database.
+      requestBody:
+        description: School data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SchoolInDto'
+      responses:
+        '201':
+          description: School created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SchoolOutDto'
+        '400':
+          description: Bad Request (Validation Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+
+  /schools/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: School identifier
+        required: true
+        schema:
+          type: number
+          format: int64
+    get:
+      summary: Get school by ID
+      description: Returns a specific school by its ID.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SchoolOutDto'
+        '404':
+          description: School Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    put:
+      summary: Modify school
+      description: Updates an existing school.
+      requestBody:
+        description: Updated school data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SchoolInDto'
+      responses:
+        '200':
+          description: School modified successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SchoolOutDto'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '404':
+          description: School Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    delete:
+      summary: Delete school
+      description: Removes a school from the database.
+      responses:
+        '204':
+          description: School deleted successfully (No Content)
+        '404':
+          description: School Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+
+  # --- PROJECTS ---
+  /projects:
+    get:
+      summary: Returns a list of projects
+      description: |
+        Returns a list of all projects.
+        Allows filtering by active status or ODS.
+      parameters:
+        - name: active
+          in: query
+          description: Filter by active status
+          required: false
+          schema:
+            type: boolean
+        - name: ods
+          in: query
+          description: Filter by ODS number
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProjectOutDto'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    post:
+      summary: Register a new project
+      description: Creates a new project and assigns it to a school.
+      requestBody:
+        description: Project data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectInDto'
+      responses:
+        '201':
+          description: Project created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectOutDto'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+
+  /projects/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: Project identifier
+        required: true
+        schema:
+          type: number
+          format: int64
+    get:
+      summary: Get project by ID
+      description: Returns a specific project.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectOutDto'
+        '404':
+          description: Project Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    put:
+      summary: Modify project
+      description: Updates an existing project.
+      requestBody:
+        description: Updated project data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectInDto'
+      responses:
+        '200':
+          description: Project modified successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectOutDto'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '404':
+          description: Project Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    delete:
+      summary: Delete project
+      description: Removes a project from the database.
+      responses:
+        '204':
+          description: Project deleted successfully
+        '404':
+          description: Project Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+
+components:
+  schemas:
+    # --- SCHOOLS ---
+    SchoolInDto:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          description: Name of the school
+        city:
+          type: string
+          description: City
+        students:
+          type: integer
+          format: int64
+          description: Number of students
+          minimum: 1
+        isPublic:
+          type: boolean
+          description: Is public school
+        registerDate:
+          type: string
+          format: date
+          description: Registration date
+      example:
+        name: IES Valle del Jerte
+        city: Plasencia
+        students: 500
+        isPublic: true
+        registerDate: 2023-09-01
+
+    SchoolOutDto:
+      type: object
+      properties:
+        id:
+          type: number
+          format: int64
+          description: School identifier
+        name:
+          type: string
+          description: Name of the school
+        city:
+          type: string
+          description: City
+        students:
+          type: integer
+          format: int64
+          description: Number of students
+        isPublic:
+          type: boolean
+          description: Is public school
+        registerDate:
+          type: string
+          format: date
+          description: Registration date
+      example:
+        id: 10
+        name: IES Valle del Jerte
+        city: Plasencia
+        students: 500
+        isPublic: true
+        registerDate: 2023-09-01
+
+    # --- PROJECTS ---
+    ProjectInDto:
+      type: object
+      required:
+        - name
+        - schoolId # Agregado manual, falta en tu Java
+      properties:
+        name:
+          type: string
+          description: Name of the project
+        description:
+          type: string
+          description: Description
+        ods:
+          type: integer
+          description: ODS identifier
+          minimum: 1
+        active:
+          type: boolean
+          description: Is the project active
+        startDate:
+          type: string
+          format: date
+          description: Start date
+        schoolId:
+          type: integer
+          format: int64
+          description: ID of the school (Required to link project)
+      example:
+        name: Science Fair 2025
+        description: Innovación tecnológica
+        ods: 4
+        active: true
+        startDate: 2025-01-10
+        schoolId: 10
+
+    ProjectOutDto:
+      type: object
+      properties:
+        id:
+          type: number
+          format: int64
+          description: Project identifier
+        name:
+          type: string
+          description: Name of the project
+        description:
+          type: string
+          description: Description
+        ods:
+          type: integer
+          description: ODS identifier
+        active:
+          type: boolean
+          description: Is the project active
+        startDate:
+          type: string
+          format: date
+          description: Start date
+        schoolId:
+          type: integer
+          format: int64
+          description: ID of the associated school
+      example:
+        id: 55
+        name: Science Fair 2025
+        description: Innovación tecnológica
+        ods: 4
+        active: true
+        startDate: 2025-01-10
+        schoolId: 10
+
+    # --- ERRORS ---
+    ErrorResponse:
+      type: object
+      properties:
+        code:
+          type: number
+          format: int
+          description: Status code
+        message:
+          type: string
+          description: General error message
+        errors:
+          type: object
+          additionalProperties:
+            type: string
+          description: Field validation errors
+
+    InternalServerError:
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        code: 500
+        message: Internal Server Error
+
+    BadRequest:
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        code: 400
+        message: Validation Error
+        errors:
+          name: name is mandatory
+          students: must be greater than or equal to 1
+
+    NotFound:
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        code: 404
+        message: Resource Not Found
