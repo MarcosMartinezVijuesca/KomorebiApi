@@ -4,12 +4,20 @@ info:
   description: API for managing schools and projects
   version: 1.0.0
 servers:
-  - url: 'http://localhost:8081'
-    description: Local Server
+  - url: 'http://komorebi.es'
+    description: Schools and projects
+tags:
+  - name: schools
+    description: operations with schools
+  - name: projects
+    description: operations with projects
+
 paths:
   # --- SCHOOLS ---
   /schools:
     get:
+      tags:
+        - schools
       summary: Returns a list of schools
       description: |
         Returns a list of all available schools.
@@ -43,6 +51,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
     post:
+      tags:
+        - schools
       summary: Register a new school
       description: Creates a new school in the database.
       requestBody:
@@ -82,6 +92,8 @@ paths:
           type: number
           format: int64
     get:
+      tags:
+        - schools
       summary: Get school by ID
       description: Returns a specific school by its ID.
       responses:
@@ -104,6 +116,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
     put:
+      tags:
+        - schools
       summary: Modify school
       description: Updates an existing school.
       requestBody:
@@ -139,6 +153,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
     delete:
+      tags:
+        - schools
       summary: Delete school
       description: Removes a school from the database.
       responses:
@@ -160,6 +176,8 @@ paths:
   # --- PROJECTS ---
   /projects:
     get:
+      tags:
+        - projects
       summary: Returns a list of projects
       description: |
         Returns a list of all projects.
@@ -193,6 +211,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
     post:
+      tags:
+        - projects
       summary: Register a new project
       description: Creates a new project and assigns it to a school.
       requestBody:
@@ -232,6 +252,8 @@ paths:
           type: number
           format: int64
     get:
+      tags:
+        - projects
       summary: Get project by ID
       description: Returns a specific project.
       responses:
@@ -254,6 +276,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
     put:
+      tags:
+        - projects
       summary: Modify project
       description: Updates an existing project.
       requestBody:
@@ -289,6 +313,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
     delete:
+      tags:
+        - projects
       summary: Delete project
       description: Removes a project from the database.
       responses:
