@@ -56,8 +56,10 @@ jobs:
               echo "API is up!"
               break
             fi
-            sleep 5
+            sleep 10
           done
+          echo "API did not start in time"
+          exit 1
 
       - name: Create admin user and get token
         run: |
