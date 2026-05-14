@@ -34,6 +34,9 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
+      - name: Give mvnw execute permission
+        run: chmod +x mvnw
+
       - name: Build and start API
         run: ./mvnw spring-boot:run &
         env:
@@ -74,4 +77,4 @@ jobs:
         run: npm install -g @hoppscotch/cli
 
       - name: Run Hoppscotch tests
-        run: hopp test hoppscotch-collection.json -e hoppscotch-env.json
+        run: hopp test hoppscotch-collection.json -e hoppscotch-env.jsonhoppscotch-env.json
