@@ -37,7 +37,10 @@ jobs:
       - name: Give mvnw execute permission
         run: chmod +x mvnw
 
-      - name: Build and start API
+      - name: Build API
+        run: ./mvnw package -DskipTests
+
+      - name: Start API
         run: ./mvnw spring-boot:run &
         env:
           SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
@@ -49,14 +52,14 @@ jobs:
       - name: Wait for API to start
         run: |
           echo "Waiting for API..."
-          for i in {1..60}; do
-            STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8081/schools)
+          for i in {1..30}; do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8081/schools || echo "000")
             echo "Attempt $i - Status: $STATUS"
             if [ "$STATUS" = "200" ]; then
               echo "API is up!"
-              break
+              exit 0
             fi
-            sleep 10
+            sleep 5
           done
           echo "API did not start in time"
           exit 1
@@ -79,4 +82,4 @@ jobs:
         run: npm install -g @hoppscotch/cli
 
       - name: Run Hoppscotch tests
-        run: hopp test hoppscotch-collection.json -e hoppscotch-env.jsonhoppscotch-env.json
+        run: hopp test hoppscotch-collection.json -e hoppscotch-env.json
