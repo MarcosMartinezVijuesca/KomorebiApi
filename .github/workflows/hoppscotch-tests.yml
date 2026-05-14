@@ -51,6 +51,18 @@ jobs:
             sleep 3
           done
 
+      - name: Create admin user and get token
+        run: |
+          curl -s -X POST http://localhost:8081/auth/register \
+            -H "Content-Type: application/json" \
+            -d '{"username":"admin","password":"admin123","role":"ADMIN"}'
+
+          TOKEN=$(curl -s -X POST http://localhost:8081/auth/login \
+            -H "Content-Type: application/json" \
+            -d '{"username":"admin","password":"admin123"}' | grep -o '"token":"[^"]*"' | cut -d'"' -f4)
+
+          sed -i 's/"key": "token", "value": ""/"key": "token", "value": "'"$TOKEN"'"/' hoppscotch-env.json
+
       - name: Install Hopp CLI
         run: npm install -g @hoppscotch/cli
 
