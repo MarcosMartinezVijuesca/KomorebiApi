@@ -51,7 +51,7 @@ public class ProjectController {
         logger.info("BEGIN addProject");
         ProjectOutDto newProject = projectService.add(schoolId, project);
         logger.info("END addProject");
-        return new ResponseEntity<>(newProject, HttpStatus.OK);
+        return new ResponseEntity<>(newProject, HttpStatus.CREATED);
     }
 
     @PutMapping("/projects/{projectId}")

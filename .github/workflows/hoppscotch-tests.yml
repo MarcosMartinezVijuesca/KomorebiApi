@@ -1,0 +1,85 @@
+name: Hoppscotch API Tests
+
+on:
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: 25092010
+          MYSQL_DATABASE: komorebidb
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Give mvnw execute permission
+        run: chmod +x mvnw
+
+      - name: Build API
+        run: ./mvnw package -DskipTests
+
+      - name: Start API
+        run: ./mvnw spring-boot:run &
+        env:
+          SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+          SPRING_DATASOURCE_USERNAME: root
+          SPRING_DATASOURCE_PASSWORD: 25092010
+          JWT_SECRET: komorebi-super-secret-key-2025-svalero-dam
+          JWT_EXPIRATION: 86400000
+
+      - name: Wait for API to start
+        run: |
+          echo "Waiting for API..."
+          for i in {1..30}; do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8081/schools || echo "000")
+            echo "Attempt $i - Status: $STATUS"
+            if [ "$STATUS" = "200" ]; then
+              echo "API is up!"
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "API did not start in time"
+          exit 1
+
+      - name: Create admin user and get token
+        run: |
+          curl -s -X POST http://localhost:8081/auth/register \
+            -H "Content-Type: application/json" \
+            -d '{"username":"admin","password":"admin123","role":"ADMIN"}'
+
+          TOKEN=$(curl -s -X POST http://localhost:8081/auth/login \
+            -H "Content-Type: application/json" \
+            -d '{"username":"admin","password":"admin123"}' | grep -o '"token":"[^"]*"' | cut -d'"' -f4)
+
+          echo "Token: $TOKEN"
+          sed -i 's/"key": "token", "value": ""/"key": "token", "value": "'"$TOKEN"'"/' hoppscotch-env.json
+          cat hoppscotch-env.json
+
+      - name: Install Hopp CLI
+        run: npm install -g @hoppscotch/cli
+
+      - name: Run Hoppscotch tests
+        run: hopp test hoppscotch-collection.json -e hoppscotch-env.json
