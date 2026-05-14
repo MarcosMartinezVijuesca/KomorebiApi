@@ -1,18 +1,113 @@
 openapi: 3.0.1
 info:
   title: Komorebi API
-  description: API for managing schools and projects
+  description: |
+    API for managing schools and projects linked to the UN 2030 Agenda (ODS).
+    
+    ## Authentication
+    This API uses JWT Bearer tokens. To access protected endpoints:
+    1. Register a user via `POST /auth/register`
+    2. Login via `POST /auth/login` to get a token
+    3. Include the token in the `Authorization` header: `Bearer <token>`
+    
+    ## Access Control
+    - **Public**: GET operations on schools and projects
+    - **ADMIN role required**: POST, PUT, DELETE operations
   version: 1.0.0
 servers:
+  - url: 'http://localhost:8081'
+    description: Local development server
   - url: 'http://komorebi.es'
-    description: Schools and projects
+    description: Production server
+
 tags:
+  - name: auth
+    description: Authentication operations
   - name: schools
-    description: operations with schools
+    description: Operations with schools
   - name: projects
-    description: operations with projects
+    description: Operations with projects
 
 paths:
+  # --- AUTH ---
+  /auth/register:
+    post:
+      tags:
+        - auth
+      summary: Register a new user
+      description: Creates a new user account. Returns a JWT token on success.
+      requestBody:
+        description: User registration data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterDto'
+      responses:
+        '201':
+          description: User registered successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponseDto'
+        '400':
+          description: Bad Request (Validation Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '409':
+          description: Conflict - Username already exists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Conflict'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+
+  /auth/login:
+    post:
+      tags:
+        - auth
+      summary: Login
+      description: Authenticates a user and returns a JWT token.
+      requestBody:
+        description: Login credentials
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginDto'
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponseDto'
+        '400':
+          description: Bad Request (Validation Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '401':
+          description: Unauthorized - Invalid credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+
   # --- SCHOOLS ---
   /schools:
     get:
@@ -54,7 +149,9 @@ paths:
       tags:
         - schools
       summary: Register a new school
-      description: Creates a new school in the database.
+      description: Creates a new school in the database. Requires ADMIN role.
+      security:
+        - bearerAuth: []
       requestBody:
         description: School data
         required: true
@@ -75,6 +172,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadRequest'
+        '401':
+          description: Unauthorized - Token missing or invalid
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized'
+        '403':
+          description: Forbidden - ADMIN role required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Forbidden'
         '500':
           description: Internal Server Error
           content:
@@ -89,7 +198,7 @@ paths:
         description: School identifier
         required: true
         schema:
-          type: number
+          type: integer
           format: int64
     get:
       tags:
@@ -119,7 +228,9 @@ paths:
       tags:
         - schools
       summary: Modify school
-      description: Updates an existing school.
+      description: Updates an existing school. Requires ADMIN role.
+      security:
+        - bearerAuth: []
       requestBody:
         description: Updated school data
         required: true
@@ -140,6 +251,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadRequest'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized'
+        '403':
+          description: Forbidden - ADMIN role required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Forbidden'
         '404':
           description: School Not Found
           content:
@@ -156,10 +279,85 @@ paths:
       tags:
         - schools
       summary: Delete school
-      description: Removes a school from the database.
+      description: Removes a school from the database. Requires ADMIN role.
+      security:
+        - bearerAuth: []
       responses:
         '204':
           description: School deleted successfully (No Content)
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized'
+        '403':
+          description: Forbidden - ADMIN role required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Forbidden'
+        '404':
+          description: School Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+
+  /schools/{schoolId}/projects:
+    parameters:
+      - name: schoolId
+        in: path
+        description: School identifier
+        required: true
+        schema:
+          type: integer
+          format: int64
+    post:
+      tags:
+        - projects
+      summary: Register a new project for a school
+      description: Creates a new project and assigns it to the specified school. Requires ADMIN role.
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: Project data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectInDto'
+      responses:
+        '201':
+          description: Project created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectOutDto'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized'
+        '403':
+          description: Forbidden - ADMIN role required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Forbidden'
         '404':
           description: School Not Found
           content:
@@ -181,20 +379,20 @@ paths:
       summary: Returns a list of projects
       description: |
         Returns a list of all projects.
-        Allows filtering by active status or ODS.
+        Allows filtering by name and description.
       parameters:
-        - name: active
+        - name: name
           in: query
-          description: Filter by active status
+          description: Filter by project name
           required: false
           schema:
-            type: boolean
-        - name: ods
+            type: string
+        - name: description
           in: query
-          description: Filter by ODS number
+          description: Filter by description
           required: false
           schema:
-            type: integer
+            type: string
       responses:
         '200':
           description: OK
@@ -210,37 +408,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
-    post:
-      tags:
-        - projects
-      summary: Register a new project
-      description: Creates a new project and assigns it to a school.
-      requestBody:
-        description: Project data
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ProjectInDto'
-      responses:
-        '201':
-          description: Project created successfully
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProjectOutDto'
-        '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BadRequest'
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
 
   /projects/{id}:
     parameters:
@@ -249,7 +416,7 @@ paths:
         description: Project identifier
         required: true
         schema:
-          type: number
+          type: integer
           format: int64
     get:
       tags:
@@ -279,7 +446,9 @@ paths:
       tags:
         - projects
       summary: Modify project
-      description: Updates an existing project.
+      description: Updates an existing project. Requires ADMIN role.
+      security:
+        - bearerAuth: []
       requestBody:
         description: Updated project data
         required: true
@@ -300,6 +469,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadRequest'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized'
+        '403':
+          description: Forbidden - ADMIN role required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Forbidden'
         '404':
           description: Project Not Found
           content:
@@ -316,10 +497,24 @@ paths:
       tags:
         - projects
       summary: Delete project
-      description: Removes a project from the database.
+      description: Removes a project from the database. Requires ADMIN role.
+      security:
+        - bearerAuth: []
       responses:
         '204':
           description: Project deleted successfully
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized'
+        '403':
+          description: Forbidden - ADMIN role required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Forbidden'
         '404':
           description: Project Not Found
           content:
@@ -334,7 +529,73 @@ paths:
                 $ref: '#/components/schemas/InternalServerError'
 
 components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT token obtained from /auth/login
+
   schemas:
+    # --- AUTH ---
+    RegisterDto:
+      type: object
+      required:
+        - username
+        - password
+      properties:
+        username:
+          type: string
+          description: Unique username
+        password:
+          type: string
+          description: Password
+          format: password
+        role:
+          type: string
+          description: User role (ADMIN or USER). Defaults to USER if not provided.
+          enum:
+            - ADMIN
+            - USER
+      example:
+        username: admin
+        password: admin123
+        role: ADMIN
+
+    LoginDto:
+      type: object
+      required:
+        - username
+        - password
+      properties:
+        username:
+          type: string
+          description: Username
+        password:
+          type: string
+          description: Password
+          format: password
+      example:
+        username: admin
+        password: admin123
+
+    AuthResponseDto:
+      type: object
+      properties:
+        token:
+          type: string
+          description: JWT token
+        username:
+          type: string
+          description: Username
+        role:
+          type: string
+          description: User role
+      example:
+        token: eyJhbGciOiJIUzI1NiJ9...
+        username: admin
+        role: ROLE_ADMIN
+
     # --- SCHOOLS ---
     SchoolInDto:
       type: object
@@ -352,7 +613,7 @@ components:
           format: int64
           description: Number of students
           minimum: 1
-        isPublic:
+        publicSchool:
           type: boolean
           description: Is public school
         registerDate:
@@ -363,14 +624,14 @@ components:
         name: IES Valle del Jerte
         city: Plasencia
         students: 500
-        isPublic: true
+        publicSchool: true
         registerDate: 2023-09-01
 
     SchoolOutDto:
       type: object
       properties:
         id:
-          type: number
+          type: integer
           format: int64
           description: School identifier
         name:
@@ -383,7 +644,7 @@ components:
           type: integer
           format: int64
           description: Number of students
-        isPublic:
+        publicSchool:
           type: boolean
           description: Is public school
         registerDate:
@@ -395,7 +656,7 @@ components:
         name: IES Valle del Jerte
         city: Plasencia
         students: 500
-        isPublic: true
+        publicSchool: true
         registerDate: 2023-09-01
 
     # --- PROJECTS ---
@@ -403,7 +664,6 @@ components:
       type: object
       required:
         - name
-        - schoolId # Agregado manual, falta en tu Java
       properties:
         name:
           type: string
@@ -422,23 +682,18 @@ components:
           type: string
           format: date
           description: Start date
-        schoolId:
-          type: integer
-          format: int64
-          description: ID of the school (Required to link project)
       example:
         name: Science Fair 2025
         description: Innovación tecnológica
         ods: 4
         active: true
         startDate: 2025-01-10
-        schoolId: 10
 
     ProjectOutDto:
       type: object
       properties:
         id:
-          type: number
+          type: integer
           format: int64
           description: Project identifier
         name:
@@ -475,13 +730,12 @@ components:
       type: object
       properties:
         code:
-          type: number
-          format: int
-          description: Status code
+          type: integer
+          description: HTTP status code
         message:
           type: string
-          description: General error message
-        errors:
+          description: Error message
+        errorMessages:
           type: object
           additionalProperties:
             type: string
@@ -499,9 +753,9 @@ components:
         - $ref: '#/components/schemas/ErrorResponse'
       example:
         code: 400
-        message: Validation Error
-        errors:
-          name: name is mandatory
+        message: Bad Request
+        errorMessages:
+          name: name is mandatory and cannot be empty
           students: must be greater than or equal to 1
 
     NotFound:
@@ -510,3 +764,24 @@ components:
       example:
         code: 404
         message: Resource Not Found
+
+    Unauthorized:
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        code: 401
+        message: Invalid username or password
+
+    Conflict:
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        code: 409
+        message: Username already exists
+
+    Forbidden:
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        code: 403
+        message: Access Denied
