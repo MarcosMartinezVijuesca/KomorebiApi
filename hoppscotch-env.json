@@ -1,0 +1,9 @@
+{
+  "name": "Komorebi CI",
+  "variables": [
+    { "key": "baseUrl", "value": "http://localhost:8081" },
+    { "key": "token", "value": "" },
+    { "key": "schoolId", "value": "" },
+    { "key": "projectId", "value": "" }
+  ]
+}

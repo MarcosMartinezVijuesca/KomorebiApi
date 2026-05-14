@@ -19,6 +19,6 @@ public class ProjectInDto {
     private String description;
     @Min(value = 1)
     private int ods;
-    private boolean active;
+    private Boolean active;
     private LocalDate startDate;
 }

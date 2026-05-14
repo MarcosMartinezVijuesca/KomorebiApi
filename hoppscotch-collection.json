@@ -1,0 +1,573 @@
+{
+  "v": 6,
+  "name": "komorebi API_v2",
+  "folders": [
+    {
+      "v": 6,
+      "name": "Auth",
+      "folders": [],
+      "requests": [
+        {
+          "v": "11",
+          "name": "register 201",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/auth/register",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 201\", () => {\n    pw.expect(pw.response.status).toBe(201);\n});\n\npw.test(\"Response has token\", () => {\n    pw.expect(pw.response.body.token).not.toBe(undefined);\n});\n\npw.test(\"Response has username\", () => {\n    pw.expect(pw.response.body.username).not.toBe(undefined);\n});\n\npw.test(\"Response has role\", () => {\n    pw.expect(pw.response.body.role).not.toBe(undefined);\n});\n",
+          "auth": {
+            "authType": "bearer",
+            "token": "",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"username\": \"testuser\",\n  \"password\": \"test123\",\n  \"role\": \"USER\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "login 200",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/auth/login",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 200\", () => {\n    pw.expect(pw.response.status).toBe(200);\n});\n\npw.test(\"Response has token\", () => {\n    pw.expect(pw.response.body.token).not.toBe(undefined);\n});\n\npw.test(\"Response has username\", () => {\n    pw.expect(pw.response.body.username).not.toBe(undefined);\n});\n\npw.test(\"Response has role\", () => {\n    pw.expect(pw.response.body.role).not.toBe(undefined);\n});\n\npw.env.set(\"token\", pw.response.body.token);",
+          "auth": {
+            "authType": "bearer",
+            "token": "",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"username\": \"admin\",\n  \"password\": \"admin123\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "login 401",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/auth/login",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 401\", () => {\n    pw.expect(pw.response.status).toBe(401);\n});\n\npw.test(\"Response has code 401\", () => {\n    pw.expect(pw.response.body.code).toBe(401);\n});\n\npw.test(\"Response has message\", () => {\n    pw.expect(pw.response.body.message).not.toBe(undefined);\n});",
+          "auth": {
+            "authType": "bearer",
+            "token": "",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"username\": \"admin\",\n  \"password\": \"contraseñamal\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "register 409",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/auth/register",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 409\", () => {\n    pw.expect(pw.response.status).toBe(409);\n});\n\npw.test(\"Response has code 409\", () => {\n    pw.expect(pw.response.body.code).toBe(409);\n});\n\npw.test(\"Response has message\", () => {\n    pw.expect(pw.response.body.message).not.toBe(undefined);\n});",
+          "auth": {
+            "authType": "bearer",
+            "token": "",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"username\": \"admin\",\n  \"password\": \"admin123\",\n  \"role\": \"ADMIN\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "register 400",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/auth/register",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 400\", () => {\n    pw.expect(pw.response.status).toBe(400);\n});\n\npw.test(\"Response has errorMessages\", () => {\n    pw.expect(pw.response.body.errorMessages).not.toBe(undefined);\n});\n\npw.test(\"Error mentions username\", () => {\n    pw.expect(pw.response.body.errorMessages.username).not.toBe(undefined);\n});",
+          "auth": {
+            "authType": "bearer",
+            "token": "",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"password\": \"admin123\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "_ref_id": "coll_mp5h5zr2_9489a2fa-2d55-46b8-8b82-c67d60e9ae86"
+    },
+    {
+      "v": 6,
+      "name": "Schools",
+      "folders": [],
+      "requests": [
+        {
+          "v": "11",
+          "name": "GET school 200",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/schools",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 200\", () => {\n    pw.expect(pw.response.status).toBe(200);\n});\n\npw.test(\"Response is array\", () => {\n    pw.expect(Array.isArray(pw.response.body)).toBe(true);\n});",
+          "auth": {
+            "authType": "bearer",
+            "token": "",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": ""
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "schools 201",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/schools",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 201\", () => {\n    pw.expect(pw.response.status).toBe(201);\n});\n\npw.test(\"Response has id\", () => {\n    pw.expect(pw.response.body.id).not.toBe(undefined);\n});\n\npw.test(\"Name matches\", () => {\n    pw.expect(pw.response.body.name).toBe(\"IES Test School\");\n});\n\npw.test(\"City matches\", () => {\n    pw.expect(pw.response.body.city).toBe(\"Zaragoza\");\n});\n\npw.env.set(\"schoolId\", pw.response.body.id.toString());",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<token>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"IES Itaca\",\n  \"city\": \"Zaragoza\",\n  \"students\": 350,\n  \"publicSchool\": true,\n  \"registerDate\": \"2024-09-01\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "schools 400",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/schools",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 400\", () => {\n    pw.expect(pw.response.status).toBe(400);\n});\n\npw.test(\"Response has code 400\", () => {\n    pw.expect(pw.response.body.code).toBe(400);\n});\n\npw.test(\"Error mentions name field\", () => {\n    pw.expect(pw.response.body.errorMessages.name).not.toBe(undefined);\n});",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<token>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"city\": \"Zaragoza\",\n  \"students\": 350\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "schools {id}200",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/schools/<<schoolId>>",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 200\", () => {\n    pw.expect(pw.response.status).toBe(200);\n});\n\npw.test(\"Response has id\", () => {\n    pw.expect(pw.response.body.id).not.toBe(undefined);\n});\n\npw.test(\"Response has name\", () => {\n    pw.expect(pw.response.body.name).not.toBe(undefined);\n});",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": ""
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "schools {id}404",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/schools/999999",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 404\", () => {\n    pw.expect(pw.response.status).toBe(404);\n});\n\npw.test(\"Response has code 404\", () => {\n    pw.expect(pw.response.body.code).toBe(404);\n});\n\npw.test(\"Response has message\", () => {\n    pw.expect(pw.response.body.message).not.toBe(undefined);\n});",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": ""
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "PUT schools {id}200",
+          "method": "PUT",
+          "endpoint": "<<baseUrl>>/schools/<<schoolId>>",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 200\", () => {\n    pw.expect(pw.response.status).toBe(200);\n});\n\npw.test(\"Name updated\", () => {\n    pw.expect(pw.response.body.name).toBe(\"IES Test School UPDATED\");\n});\n\npw.test(\"City updated\", () => {\n    pw.expect(pw.response.body.city).toBe(\"Huesca\");\n});\n\npw.test(\"Students updated\", () => {\n    pw.expect(pw.response.body.students).toBe(400);\n});",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<token>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"IES Test School UPDATED\",\n  \"city\": \"Huesca\",\n  \"students\": 400,\n  \"publicSchool\": true,\n  \"registerDate\": \"2024-09-01\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "PUT schools {id}400",
+          "method": "PUT",
+          "endpoint": "<<baseUrl>>/schools/<<schoolId>>",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 400\", () => {\n    pw.expect(pw.response.status).toBe(400);\n});\n\npw.test(\"Response has code 400\", () => {\n    pw.expect(pw.response.body.code).toBe(400);\n});\n\npw.test(\"Error mentions name field\", () => {\n    pw.expect(pw.response.body.errorMessages.name).not.toBe(undefined);\n});\n\npw.test(\"Students updated\", () => {\n    pw.expect(pw.response.body.students).toBe(400);\n});",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<token>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"city\": \"Huesca\",\n  \"students\": 400\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "PUT schools {id}404",
+          "method": "PUT",
+          "endpoint": "<<baseUrl>>/schools/99999",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 404\", () => {\n    pw.expect(pw.response.status).toBe(404);\n});\n\npw.test(\"Response has code 404\", () => {\n    pw.expect(pw.response.body.code).toBe(404);\n});\n\npw.test(\"Response has message\", () => {\n    pw.expect(pw.response.body.message).not.toBe(undefined);\n});",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<token>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"IES Prueba\",\n  \"city\": \"Todas\",\n  \"students\": 1,\n  \"publicSchool\": true\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "DELETEschools {id}204",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl>>/schools/19",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 204\", () => {\n    pw.expect(pw.response.status).toBe(204);\n});",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<token>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": ""
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "DELETEschools {id}404",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl>>/schools/99999",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 404\", () => {\n    pw.expect(pw.response.status).toBe(404);\n});\n\npw.test(\"Response has code 404\", () => {\n    pw.expect(pw.response.body.code).toBe(404);\n});\n\npw.test(\"Response has message\", () => {\n    pw.expect(pw.response.body.message).not.toBe(undefined);\n});",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<token>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": ""
+          },
+          "requestVariables": [],
+          "responses": {}
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "_ref_id": "coll_mp5j90h1_9dc262ee-5f2b-46ad-b83b-2fa10ffc705f"
+    },
+    {
+      "v": 6,
+      "name": "Projects",
+      "folders": [],
+      "requests": [
+        {
+          "v": "11",
+          "name": "GET projects 200",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/projects",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 200\", () => {\n    pw.expect(pw.response.status).toBe(200);\n});\n\npw.test(\"Response is array\", () => {\n    pw.expect(Array.isArray(pw.response.body)).toBe(true);\n});",
+          "auth": {
+            "authType": "bearer",
+            "token": "",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": ""
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "POST schools/{id}/projects - 201",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/schools/<<schoolId>>/projects",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 201\", () => {\n    pw.expect(pw.response.status).toBe(201);\n});\n\npw.test(\"Response has id\", () => {\n    pw.expect(pw.response.body.id).not.toBe(undefined);\n});\n\npw.test(\"Name matches\", () => {\n    pw.expect(pw.response.body.name).toBe(\"Science Fair 2025\");\n});\n\npw.test(\"School id is set\", () => {\n    pw.expect(pw.response.body.schoolId).not.toBe(undefined);\n});\n\npw.env.set(\"projectId\", pw.response.body.id.toString());",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<token>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Science Fair 2025\",\n  \"description\": \"Innovación tecnológica\",\n  \"ods\": 4,\n  \"active\": true,\n  \"startDate\": \"2025-01-10\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "POST schools/{id}/projects - 400",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/schools/<<schoolId>>/projects",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 400\", () => {\n    pw.expect(pw.response.status).toBe(400);\n});\n\npw.test(\"Response has code 400\", () => {\n    pw.expect(pw.response.body.code).toBe(400);\n});\n\npw.test(\"Error mentions name field\", () => {\n    pw.expect(pw.response.body.errorMessages.name).not.toBe(undefined);\n});",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<token>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"description\": \"Sin nombre\",\n  \"ods\": 4,\n  \"active\": true\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "GET /projects/{id} 200",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/projects/<<projectId>>",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 200\", () => {\n    pw.expect(pw.response.status).toBe(200);\n});\n\npw.test(\"Response has id\", () => {\n    pw.expect(pw.response.body.id).not.toBe(undefined);\n});\n\npw.test(\"Response has name\", () => {\n    pw.expect(pw.response.body.name).not.toBe(undefined);\n});",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": ""
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "GET /projects/{id} 404",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/projects/9999",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 404\", () => {\n    pw.expect(pw.response.status).toBe(404);\n});\n\npw.test(\"Response has code 404\", () => {\n    pw.expect(pw.response.body.code).toBe(404);\n});\n\npw.test(\"Response has message\", () => {\n    pw.expect(pw.response.body.message).not.toBe(undefined);\n});",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": ""
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "PUT /projects/{id} 200",
+          "method": "PUT",
+          "endpoint": "<<baseUrl>>/projects/<<projectId>>",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 200\", () => {\n    pw.expect(pw.response.status).toBe(200);\n});\n\npw.test(\"Name updated\", () => {\n    pw.expect(pw.response.body.name).toBe(\"Science Fair 2025 UPDATED\");\n});\n\npw.test(\"ODS updated\", () => {\n    pw.expect(pw.response.body.ods).toBe(5);\n});\n\npw.test(\"Active updated\", () => {\n    pw.expect(pw.response.body.active).toBe(false);\n});",
+          "auth": {
+            "authType": "bearer",
+            "authActive": true,
+            "token": "<<token>>"
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Science Fair 2025 UPDATED\",\n  \"description\": \"Innovación tecnológica actualizada\",\n  \"ods\": 5,\n  \"active\": false,\n  \"startDate\": \"2025-03-01\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "PUT /projects/{id} 400",
+          "method": "PUT",
+          "endpoint": "<<baseUrl>>/projects/<<projectId>>",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 400\", () => {\n    pw.expect(pw.response.status).toBe(400);\n});\n\npw.test(\"Response has code 400\", () => {\n    pw.expect(pw.response.body.code).toBe(400);\n});\n\npw.test(\"Error mentions name field\", () => {\n    pw.expect(pw.response.body.errorMessages.name).not.toBe(undefined);\n});",
+          "auth": {
+            "authType": "bearer",
+            "authActive": true,
+            "token": "<<token>>"
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"description\": \"Sin nombre\",\n  \"ods\": 4\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "PUT /projects/{id} 404",
+          "method": "PUT",
+          "endpoint": "<<baseUrl>>/projects/9999",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 404\", () => {\n    pw.expect(pw.response.status).toBe(404);\n});\n\npw.test(\"Response has code 404\", () => {\n    pw.expect(pw.response.body.code).toBe(404);\n});\n\npw.test(\"Response has message\", () => {\n    pw.expect(pw.response.body.message).not.toBe(undefined);\n});",
+          "auth": {
+            "authType": "bearer",
+            "authActive": true,
+            "token": "<<token>>"
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Ghost Project\",\n  \"description\": \"No existe\",\n  \"ods\": 1,\n  \"active\": true\n}"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "DELETE /projects/{id} 204",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl>>/projects/<<projectId>>",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 204\", () => {\n    pw.expect(pw.response.status).toBe(204);\n});",
+          "auth": {
+            "authType": "bearer",
+            "authActive": true,
+            "token": "<<token>>"
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": ""
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "11",
+          "name": "DELETE /projects/{id} 404",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl>>/projects/9999",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 404\", () => {\n    pw.expect(pw.response.status).toBe(404);\n});\n\npw.test(\"Response has code 404\", () => {\n    pw.expect(pw.response.body.code).toBe(404);\n});\n\npw.test(\"Response has message\", () => {\n    pw.expect(pw.response.body.message).not.toBe(undefined);\n});",
+          "auth": {
+            "authType": "bearer",
+            "authActive": true,
+            "token": "<<token>>"
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": ""
+          },
+          "requestVariables": [],
+          "responses": {}
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "_ref_id": "coll_mp5vkf9g_28fc476a-fb92-4a63-8bf8-d96d6d7b1f13"
+    }
+  ],
+  "requests": [],
+  "auth": {
+    "authType": "none",
+    "authActive": true
+  },
+  "headers": [],
+  "_ref_id": "coll_mp5h5nc6_3f159467-a8d1-422c-948d-b222f27b7ace"
+}

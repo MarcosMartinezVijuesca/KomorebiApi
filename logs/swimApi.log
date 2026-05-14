@@ -1,0 +1,980 @@
+2026-02-06 15:49:06,647 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 9584 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-06 15:49:06,651 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-06 15:49:06,886 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-06 15:49:07,190 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06 15:49:07,252 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 53 ms. Found 2 JPA repository interfaces.
+2026-02-06 15:49:07,751 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-06 15:49:07,764 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-06 15:49:07,766 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-06 15:49:07,767 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-06 15:49:07,835 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1139 ms
+2026-02-06 15:49:07,990 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-06 15:49:08,070 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-06 15:49:08,568 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06 15:49:08,607 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-06 15:49:08,782 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@34a33343
+2026-02-06 15:49:08,784 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-06 15:49:08,872 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-06 15:49:09,760 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-06 15:49:09,963 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 15:49:10,051 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-06 15:49:10,819 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-06 15:49:11,090 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-06 15:49:11,113 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-06 15:49:11,118 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 5.022 seconds (process running for 5.403)
+2026-02-06 15:51:44,690 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-06 15:51:44,691 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2026-02-06 15:51:44,693 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Completed initialization in 2 ms
+2026-02-06 15:51:44,769 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-06 15:53:41,519 ERROR c.s.k.c.SchoolController {handleException} [http-nio-8081-exec-2] JSON parse error: Cannot deserialize value of type `java.time.LocalDate` from String "01-01-2027": Failed to deserialize `java.time.LocalDate` (with format 'Value(Year,4,10,EXCEEDS_PAD)'-'Value(MonthOfYear,2)'-'Value(DayOfMonth,2)'): (java.time.format.DateTimeParseException) Text '01-01-2027' could not be parsed at index 0
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.time.LocalDate` from String "01-01-2027": Failed to deserialize `java.time.LocalDate` (with format 'Value(Year,4,10,EXCEEDS_PAD)'-'Value(MonthOfYear,2)'-'Value(DayOfMonth,2)'): (java.time.format.DateTimeParseException) Text '01-01-2027' could not be parsed at index 0
+	at org.springframework.http.converter.AbstractJacksonHttpMessageConverter.readJavaType(AbstractJacksonHttpMessageConverter.java:363)
+	at org.springframework.http.converter.AbstractJacksonHttpMessageConverter.read(AbstractJacksonHttpMessageConverter.java:319)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:203)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:175)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:150)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:230)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:180)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: tools.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDate` from String "01-01-2027": Failed to deserialize `java.time.LocalDate` (with format 'Value(Year,4,10,EXCEEDS_PAD)'-'Value(MonthOfYear,2)'-'Value(DayOfMonth,2)'): (java.time.format.DateTimeParseException) Text '01-01-2027' could not be parsed at index 0
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); byte offset: #100] (through reference chain: com.svalero.komorebiApi.domain.dto.SchoolInDto["registerDate"])
+	at tools.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:37)
+	at tools.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:2018)
+	at tools.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1354)
+	at tools.jackson.databind.ext.javatime.deser.JSR310DeserializerBase._handleDateTimeFormatException(JSR310DeserializerBase.java:179)
+	at tools.jackson.databind.ext.javatime.deser.LocalDateDeserializer._fromString(LocalDateDeserializer.java:179)
+	at tools.jackson.databind.ext.javatime.deser.LocalDateDeserializer.deserialize(LocalDateDeserializer.java:86)
+	at tools.jackson.databind.ext.javatime.deser.LocalDateDeserializer.deserialize(LocalDateDeserializer.java:40)
+	at tools.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:561)
+	at tools.jackson.databind.deser.bean.BeanDeserializer._deserializeWithErrorWrapping(BeanDeserializer.java:752)
+	at tools.jackson.databind.deser.bean.BeanDeserializer._deserializeUsingPropertyBased(BeanDeserializer.java:598)
+	at tools.jackson.databind.deser.bean.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1417)
+	at tools.jackson.databind.deser.bean.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:480)
+	at tools.jackson.databind.deser.bean.BeanDeserializer.deserialize(BeanDeserializer.java:200)
+	at tools.jackson.databind.deser.DeserializationContextExt.readRootValue(DeserializationContextExt.java:265)
+	at tools.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:1646)
+	at tools.jackson.databind.ObjectReader.readValue(ObjectReader.java:1171)
+	at org.springframework.http.converter.AbstractJacksonHttpMessageConverter.readJavaType(AbstractJacksonHttpMessageConverter.java:352)
+	... 46 common frames omitted
+Caused by: java.time.format.DateTimeParseException: Text '01-01-2027' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2108)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:435)
+	at tools.jackson.databind.ext.javatime.deser.LocalDateDeserializer._fromString(LocalDateDeserializer.java:177)
+	... 58 common frames omitted
+2026-02-06 15:54:27,157 INFO c.s.k.c.SchoolController {addSchool} [http-nio-8081-exec-9] POST /schools
+2026-02-06 15:54:55,813 INFO c.s.k.c.SchoolController {addSchool} [http-nio-8081-exec-4] POST /schools
+2026-02-06 15:55:02,694 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-7] GET /schools params: name=null, city=null
+2026-02-06 15:55:25,401 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-10] GET /schools params: name=null, city=null
+2026-02-06 15:56:04,751 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-06 15:56:04,760 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-06 15:56:04,763 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 15:56:04,764 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-06 15:56:04,774 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2026-02-06 15:56:14,532 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 2184 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-06 15:56:14,536 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-06 15:56:14,730 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-06 15:56:15,120 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06 15:56:15,174 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces.
+2026-02-06 15:56:15,584 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-06 15:56:15,595 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-06 15:56:15,600 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-06 15:56:15,600 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-06 15:56:15,653 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1068 ms
+2026-02-06 15:56:15,785 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-06 15:56:15,834 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-06 15:56:16,190 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06 15:56:16,217 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-06 15:56:16,342 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@126254ec
+2026-02-06 15:56:16,345 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-06 15:56:16,418 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-06 15:56:17,141 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-06 15:56:17,213 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 15:56:17,289 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-06 15:56:17,916 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-06 15:56:18,164 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-06 15:56:18,183 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-06 15:56:18,188 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 4.138 seconds (process running for 4.492)
+2026-02-06 15:56:26,454 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-06 15:56:26,456 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2026-02-06 15:56:26,459 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Completed initialization in 2 ms
+2026-02-06 15:56:26,541 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-06 15:56:32,862 INFO c.s.k.c.SchoolController {addSchool} [http-nio-8081-exec-3] POST /schools
+2026-02-06 15:59:00,320 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-06 15:59:00,329 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-06 15:59:00,333 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 15:59:00,335 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-06 15:59:00,340 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2026-02-06 15:59:10,124 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 3508 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-06 15:59:10,128 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-06 15:59:10,324 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-06 15:59:10,712 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06 15:59:10,764 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 45 ms. Found 2 JPA repository interfaces.
+2026-02-06 15:59:11,257 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-06 15:59:11,270 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-06 15:59:11,273 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-06 15:59:11,273 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-06 15:59:11,324 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1140 ms
+2026-02-06 15:59:11,449 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-06 15:59:11,494 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-06 15:59:11,936 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06 15:59:11,964 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-06 15:59:12,136 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c788d08
+2026-02-06 15:59:12,139 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-06 15:59:12,229 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-06 15:59:12,521 ERROR o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Failed to initialize JPA EntityManagerFactory: Collection 'com.svalero.komorebiApi.domain.School.projects' is 'mappedBy' a property named 'project' which does not exist in the target entity 'com.svalero.komorebiApi.domain.Project'
+2026-02-06 15:59:12,522 WARN o.s.c.s.AbstractApplicationContext {refresh} [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Collection 'com.svalero.komorebiApi.domain.School.projects' is 'mappedBy' a property named 'project' which does not exist in the target entity 'com.svalero.komorebiApi.domain.Project'
+2026-02-06 15:59:12,523 INFO c.z.h.HikariDataSource {close} [main] HikariPool-1 - Shutdown initiated...
+2026-02-06 15:59:12,538 INFO c.z.h.HikariDataSource {close} [main] HikariPool-1 - Shutdown completed.
+2026-02-06 15:59:12,545 INFO o.a.j.l.DirectJDKLog {log} [main] Stopping service [Tomcat]
+2026-02-06 15:59:12,561 INFO o.s.b.a.l.ConditionEvaluationReportLogger {logMessage} [main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-02-06 15:59:12,587 ERROR o.s.b.SpringApplication {reportFailure} [main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Collection 'com.svalero.komorebiApi.domain.School.projects' is 'mappedBy' a property named 'project' which does not exist in the target entity 'com.svalero.komorebiApi.domain.Project'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:976)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:620)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at com.svalero.komorebiApi.KomorebiApiApplication.main(KomorebiApiApplication.java:10)
+Caused by: org.hibernate.AnnotationException: Collection 'com.svalero.komorebiApi.domain.School.projects' is 'mappedBy' a property named 'project' which does not exist in the target entity 'com.svalero.komorebiApi.domain.Project'
+	at org.hibernate.boot.model.internal.CollectionBinder.getMappedByProperty(CollectionBinder.java:1523)
+	at org.hibernate.boot.model.internal.CollectionBinder.isReversePropertyInJoin(CollectionBinder.java:1506)
+	at org.hibernate.boot.model.internal.CollectionBinder.noAssociationTable(CollectionBinder.java:1531)
+	at org.hibernate.boot.model.internal.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:1489)
+	at org.hibernate.boot.model.internal.CollectionBinder$1.secondPass(CollectionBinder.java:1480)
+	at org.hibernate.boot.model.internal.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:39)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1771)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1737)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.coordinateProcessors(MetadataBuildingProcess.java:330)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:199)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1392)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.populateSessionFactoryBuilder(EntityManagerFactoryBuilderImpl.java:1472)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1454)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:433)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:416)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813)
+	... 15 common frames omitted
+2026-02-06 16:02:01,240 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 26352 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-06 16:02:01,245 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-06 16:02:01,450 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-06 16:02:01,817 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06 16:02:01,863 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 40 ms. Found 2 JPA repository interfaces.
+2026-02-06 16:02:02,317 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-06 16:02:02,334 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-06 16:02:02,337 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-06 16:02:02,337 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-06 16:02:02,384 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1090 ms
+2026-02-06 16:02:02,502 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-06 16:02:02,550 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-06 16:02:02,904 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06 16:02:02,933 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-06 16:02:03,072 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@126254ec
+2026-02-06 16:02:03,074 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-06 16:02:03,142 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-06 16:02:03,891 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-06 16:02:03,951 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 16:02:04,020 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-06 16:02:04,631 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-06 16:02:04,868 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-06 16:02:04,886 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-06 16:02:04,890 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 4.135 seconds (process running for 4.472)
+2026-02-06 16:02:10,326 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-7] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-06 16:02:10,327 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-7] Initializing Servlet 'dispatcherServlet'
+2026-02-06 16:02:10,329 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-7] Completed initialization in 0 ms
+2026-02-06 16:02:10,477 INFO c.s.k.c.SchoolController {addSchool} [http-nio-8081-exec-7] POST /schools
+2026-02-06 16:02:16,661 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-06 16:04:58,753 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-9] GET /schools params: name=null, city=null
+2026-02-06 16:05:44,857 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-06 16:05:44,864 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-06 16:05:44,868 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 16:05:44,871 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-06 16:05:44,877 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2026-02-06 16:06:00,613 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 21216 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-06 16:06:00,616 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-06 16:06:00,808 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-06 16:06:01,145 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06 16:06:01,189 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 37 ms. Found 2 JPA repository interfaces.
+2026-02-06 16:06:01,593 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-06 16:06:01,604 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-06 16:06:01,606 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-06 16:06:01,607 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-06 16:06:01,653 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 984 ms
+2026-02-06 16:06:01,764 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-06 16:06:01,805 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-06 16:06:02,166 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06 16:06:02,192 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-06 16:06:02,321 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2adc1e84
+2026-02-06 16:06:02,324 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-06 16:06:02,394 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-06 16:06:03,128 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-06 16:06:03,191 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 16:06:03,263 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-06 16:06:03,883 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-06 16:06:04,114 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-06 16:06:04,133 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-06 16:06:04,138 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 4.034 seconds (process running for 4.381)
+2026-02-06 16:06:08,894 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-06 16:06:08,894 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2026-02-06 16:06:08,896 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Completed initialization in 1 ms
+2026-02-06 16:06:08,934 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-06 16:06:55,274 INFO c.s.k.c.SchoolController {addSchool} [http-nio-8081-exec-4] POST /schools
+2026-02-06 16:07:21,875 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-9] GET /schools params: name=null, city=null
+2026-02-06 16:08:41,222 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-06 16:08:52,692 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-3] BEGIN getAll
+2026-02-06 16:08:52,761 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-3] END getAll
+2026-02-06 16:11:39,829 INFO c.s.k.c.ProjectController {addProject} [http-nio-8081-exec-1] BEGIN addProject
+2026-02-06 16:11:39,872 INFO c.s.k.c.ProjectController {addProject} [http-nio-8081-exec-1] END addProject
+2026-02-06 16:11:44,486 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-2] BEGIN getAll
+2026-02-06 16:11:44,498 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-2] END getAll
+2026-02-06 16:12:35,105 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-06 16:12:35,114 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-06 16:12:35,117 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 16:12:35,119 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-06 16:12:35,126 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2026-02-06 16:12:45,341 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 12528 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-06 16:12:45,344 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-06 16:12:45,558 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-06 16:12:45,900 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06 16:12:45,946 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 39 ms. Found 2 JPA repository interfaces.
+2026-02-06 16:12:46,358 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-06 16:12:46,371 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-06 16:12:46,373 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-06 16:12:46,374 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-06 16:12:46,422 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1038 ms
+2026-02-06 16:12:46,539 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-06 16:12:46,579 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-06 16:12:46,944 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06 16:12:46,970 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-06 16:12:47,098 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@126254ec
+2026-02-06 16:12:47,100 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-06 16:12:47,164 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-06 16:12:47,919 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-06 16:12:47,978 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 16:12:48,048 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-06 16:12:48,682 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-06 16:12:48,923 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-06 16:12:48,941 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-06 16:12:48,946 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 4.09 seconds (process running for 4.462)
+2026-02-06 16:13:02,522 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-06 16:13:02,523 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2026-02-06 16:13:02,526 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Completed initialization in 2 ms
+2026-02-06 16:13:02,607 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-1] BEGIN getAll
+2026-02-06 16:13:02,848 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-1] END getAll
+2026-02-06 16:14:43,442 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-3] GET /schools params: name=null, city=null
+2026-02-06 16:14:54,122 INFO c.s.k.c.SchoolController {deleteSchool} [http-nio-8081-exec-2] DELETE /schools/1
+2026-02-06 16:14:54,769 WARN o.h.e.j.s.SqlExceptionHelper {logExceptions} [http-nio-8081-exec-2] HHH000247: ErrorCode: 1451, SQLState: 23000
+2026-02-06 16:14:54,769 WARN o.h.e.j.s.SqlExceptionHelper {logExceptions} [http-nio-8081-exec-2] Cannot delete or update a parent row: a foreign key constraint fails (`komorebidb`.`projects`, CONSTRAINT `FK2ely3u2yvcgd00u5phw3htocy` FOREIGN KEY (`school_id`) REFERENCES `schools` (`id`))
+2026-02-06 16:14:54,793 ERROR c.s.k.c.SchoolController {handleException} [http-nio-8081-exec-2] could not execute statement [Cannot delete or update a parent row: a foreign key constraint fails (`komorebidb`.`projects`, CONSTRAINT `FK2ely3u2yvcgd00u5phw3htocy` FOREIGN KEY (`school_id`) REFERENCES `schools` (`id`))] [delete from schools where id=?]; SQL [delete from schools where id=?]; constraint [FK2ely3u2yvcgd00u5phw3htocy]
+org.springframework.dao.DataIntegrityViolationException: could not execute statement [Cannot delete or update a parent row: a foreign key constraint fails (`komorebidb`.`projects`, CONSTRAINT `FK2ely3u2yvcgd00u5phw3htocy` FOREIGN KEY (`school_id`) REFERENCES `schools` (`id`))] [delete from schools where id=?]; SQL [delete from schools where id=?]; constraint [FK2ely3u2yvcgd00u5phw3htocy]
+	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.convertHibernateAccessException(HibernateExceptionTranslator.java:169)
+	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.convertHibernateAccessException(HibernateExceptionTranslator.java:131)
+	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.translateExceptionIfPossible(HibernateExceptionTranslator.java:105)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:199)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:557)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:794)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:757)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:687)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:408)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:166)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:222)
+	at jdk.proxy2/jdk.proxy2.$Proxy146.delete(Unknown Source)
+	at com.svalero.komorebiApi.service.SchoolService.deleteActivity(SchoolService.java:64)
+	at com.svalero.komorebiApi.controller.SchoolController.deleteSchool(SchoolController.java:64)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:925)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:651)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement [Cannot delete or update a parent row: a foreign key constraint fails (`komorebidb`.`projects`, CONSTRAINT `FK2ely3u2yvcgd00u5phw3htocy` FOREIGN KEY (`school_id`) REFERENCES `schools` (`id`))] [delete from schools where id=?]
+	at org.hibernate.dialect.MySQLDialect.lambda$buildSQLExceptionConversionDelegate$0(MySQLDialect.java:1277)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:34)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:115)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:184)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:145)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:53)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:66)
+	at org.hibernate.persister.entity.mutation.AbstractDeleteCoordinator.doStaticDelete(AbstractDeleteCoordinator.java:268)
+	at org.hibernate.persister.entity.mutation.AbstractDeleteCoordinator.delete(AbstractDeleteCoordinator.java:79)
+	at org.hibernate.action.internal.EntityDeleteAction.execute(EntityDeleteAction.java:119)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:634)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:505)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:381)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138)
+	at org.hibernate.internal.SessionImpl.fireFlush(SessionImpl.java:1489)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:481)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2116)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2038)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:410)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:166)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commitNoRollbackOnly(JdbcResourceLocalTransactionCoordinatorImpl.java:248)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:242)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:89)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:553)
+	... 57 common frames omitted
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`komorebidb`.`projects`, CONSTRAINT `FK2ely3u2yvcgd00u5phw3htocy` FOREIGN KEY (`school_id`) REFERENCES `schools` (`id`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1166)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1101)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1448)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1084)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:181)
+	... 78 common frames omitted
+2026-02-06 16:15:54,993 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-06 16:15:55,002 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-06 16:15:55,005 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 16:15:55,008 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-06 16:15:55,014 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2026-02-06 16:16:45,842 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 1984 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-06 16:16:45,845 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-06 16:16:46,044 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-06 16:16:46,393 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06 16:16:46,439 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 39 ms. Found 2 JPA repository interfaces.
+2026-02-06 16:16:46,850 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-06 16:16:46,860 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-06 16:16:46,865 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-06 16:16:46,866 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-06 16:16:46,912 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1009 ms
+2026-02-06 16:16:47,033 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-06 16:16:47,072 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-06 16:16:47,445 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06 16:16:47,473 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-06 16:16:47,595 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@55682482
+2026-02-06 16:16:47,597 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-06 16:16:47,660 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-06 16:16:48,427 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-06 16:16:48,494 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 16:16:48,571 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-06 16:16:49,220 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-06 16:16:49,476 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-06 16:16:49,491 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-06 16:16:49,498 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 4.163 seconds (process running for 4.526)
+2026-02-06 16:16:55,910 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-06 16:16:55,911 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2026-02-06 16:16:55,912 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Completed initialization in 1 ms
+2026-02-06 16:16:55,974 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-06 16:17:12,100 INFO c.s.k.c.SchoolController {deleteSchool} [http-nio-8081-exec-6] DELETE /schools/2
+2026-02-06 16:17:14,914 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-7] GET /schools params: name=null, city=null
+2026-02-06 16:17:45,435 INFO c.s.k.c.SchoolController {addSchool} [http-nio-8081-exec-9] POST /schools
+2026-02-06 16:18:17,340 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-06 16:18:17,348 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-06 16:18:17,352 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 16:18:17,354 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-06 16:18:17,361 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2026-02-06 16:18:27,381 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 22828 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-06 16:18:27,384 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-06 16:18:27,578 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-06 16:18:27,917 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06 16:18:27,963 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 38 ms. Found 2 JPA repository interfaces.
+2026-02-06 16:18:28,374 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-06 16:18:28,385 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-06 16:18:28,388 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-06 16:18:28,389 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-06 16:18:28,438 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 999 ms
+2026-02-06 16:18:28,564 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-06 16:18:28,606 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-06 16:18:28,974 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06 16:18:28,999 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-06 16:18:29,130 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c788d08
+2026-02-06 16:18:29,132 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-06 16:18:29,202 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-06 16:18:29,977 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-06 16:18:30,047 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 16:18:30,120 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-06 16:18:30,765 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-06 16:18:31,005 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-06 16:18:31,021 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-06 16:18:31,025 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 4.11 seconds (process running for 4.444)
+2026-02-06 16:18:39,928 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-06 16:18:39,929 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2026-02-06 16:18:39,931 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Completed initialization in 2 ms
+2026-02-06 16:18:39,995 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-1] BEGIN getAll
+2026-02-06 16:18:40,201 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-1] END getAll
+2026-02-06 16:19:16,478 INFO c.s.k.c.ProjectController {addProject} [http-nio-8081-exec-4] BEGIN addProject
+2026-02-06 16:19:16,561 INFO c.s.k.c.ProjectController {addProject} [http-nio-8081-exec-4] END addProject
+2026-02-06 16:19:26,876 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-2] BEGIN getAll
+2026-02-06 16:19:26,890 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-2] END getAll
+2026-02-06 16:23:04,958 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-06 16:23:04,968 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-06 16:23:04,971 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 16:23:04,973 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-06 16:23:04,980 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2026-02-06 16:23:15,269 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 13356 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-06 16:23:15,273 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-06 16:23:15,460 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-06 16:23:15,825 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06 16:23:15,871 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 41 ms. Found 2 JPA repository interfaces.
+2026-02-06 16:23:16,294 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-06 16:23:16,308 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-06 16:23:16,310 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-06 16:23:16,311 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-06 16:23:16,360 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1043 ms
+2026-02-06 16:23:16,475 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-06 16:23:16,518 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-06 16:23:16,878 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06 16:23:16,904 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-06 16:23:17,039 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c788d08
+2026-02-06 16:23:17,041 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-06 16:23:17,110 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-06 16:23:17,912 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-06 16:23:17,983 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 16:23:18,056 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-06 16:23:18,710 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-06 16:23:18,964 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-06 16:23:18,983 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-06 16:23:18,988 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 4.223 seconds (process running for 4.569)
+2026-02-06 16:23:43,913 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-06 16:23:43,914 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-2] Initializing Servlet 'dispatcherServlet'
+2026-02-06 16:23:43,917 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-2] Completed initialization in 3 ms
+2026-02-06 16:23:43,988 INFO c.s.k.c.SchoolController {deleteSchool} [http-nio-8081-exec-2] DELETE /schools/1
+2026-02-06 16:23:50,673 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-3] BEGIN getAll
+2026-02-06 16:23:50,741 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-3] END getAll
+2026-02-06 16:25:02,955 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-06 16:25:02,962 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-06 16:25:02,965 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 16:25:02,969 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-06 16:25:02,974 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2026-02-06 16:25:13,802 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 1516 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-06 16:25:13,806 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-06 16:25:14,016 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-06 16:25:14,547 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06 16:25:14,595 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 41 ms. Found 2 JPA repository interfaces.
+2026-02-06 16:25:15,022 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-06 16:25:15,034 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-06 16:25:15,037 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-06 16:25:15,038 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-06 16:25:15,090 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1238 ms
+2026-02-06 16:25:15,214 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-06 16:25:15,260 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-06 16:25:15,628 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06 16:25:15,655 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-06 16:25:15,783 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@275902e1
+2026-02-06 16:25:15,785 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-06 16:25:15,863 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-06 16:25:17,322 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-06 16:25:17,480 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 16:25:17,618 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-06 16:25:19,067 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-06 16:25:19,521 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-06 16:25:19,549 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-06 16:25:19,557 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 6.292 seconds (process running for 6.671)
+2026-02-06 16:25:20,988 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-06 16:25:20,990 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2026-02-06 16:25:20,993 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Completed initialization in 3 ms
+2026-02-06 16:25:21,056 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-06 16:25:21,226 ERROR c.s.k.c.SchoolController {handleException} [http-nio-8081-exec-1] Null value was assigned to a property [class com.svalero.komorebiApi.domain.School.publicSchool] of primitive type: 'com.svalero.komorebiApi.domain.School.publicSchool' (setter)
+org.springframework.orm.jpa.JpaSystemException: Null value was assigned to a property [class com.svalero.komorebiApi.domain.School.publicSchool] of primitive type: 'com.svalero.komorebiApi.domain.School.publicSchool' (setter)
+	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.convertHibernateAccessException(HibernateExceptionTranslator.java:223)
+	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.convertHibernateAccessException(HibernateExceptionTranslator.java:131)
+	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.translateExceptionIfPossible(HibernateExceptionTranslator.java:105)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:199)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:556)
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:346)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:157)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:166)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:222)
+	at jdk.proxy2/jdk.proxy2.$Proxy146.findAll(Unknown Source)
+	at com.svalero.komorebiApi.service.SchoolService.findAll(SchoolService.java:29)
+	at com.svalero.komorebiApi.controller.SchoolController.getAllSchools(SchoolController.java:39)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.hibernate.PropertyAccessException: Null value was assigned to a property [class com.svalero.komorebiApi.domain.School.publicSchool] of primitive type: 'com.svalero.komorebiApi.domain.School.publicSchool' (setter)
+	at org.hibernate.property.access.spi.SetterFieldImpl.set(SetterFieldImpl.java:62)
+	at org.hibernate.persister.entity.AbstractEntityPersister.setPropertyValues(AbstractEntityPersister.java:4137)
+	at org.hibernate.persister.entity.EntityPersister.setValues(EntityPersister.java:1153)
+	at org.hibernate.sql.results.graph.entity.internal.EntityInitializerImpl.initializeEntityInstance(EntityInitializerImpl.java:1589)
+	at org.hibernate.sql.results.graph.entity.internal.EntityInitializerImpl.initializeInstance(EntityInitializerImpl.java:1501)
+	at org.hibernate.sql.results.graph.entity.internal.EntityInitializerImpl.initializeInstance(EntityInitializerImpl.java:80)
+	at org.hibernate.sql.results.internal.StandardRowReader.coordinateInitializers(StandardRowReader.java:239)
+	at org.hibernate.sql.results.internal.StandardRowReader.readRow(StandardRowReader.java:137)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.read(ListResultsConsumer.java:243)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.readRows(ListResultsConsumer.java:233)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:164)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:31)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:211)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:100)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.executeQuery(JdbcSelectExecutor.java:63)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:137)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$1(ConcreteSqmSelectQueryPlan.java:128)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:427)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:355)
+	at org.hibernate.query.sqm.internal.SqmQueryImpl.doList(SqmQueryImpl.java:374)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:153)
+	at org.hibernate.query.Query.getResultList(Query.java:121)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll(SimpleJpaRepository.java:412)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:278)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:169)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:545)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:290)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:690)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:171)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:146)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:133)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:371)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:135)
+	... 50 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Can not set boolean field com.svalero.komorebiApi.domain.School.publicSchool to null value
+	at java.base/jdk.internal.reflect.FieldAccessorImpl.throwSetIllegalArgumentException(FieldAccessorImpl.java:228)
+	at java.base/jdk.internal.reflect.FieldAccessorImpl.throwSetIllegalArgumentException(FieldAccessorImpl.java:232)
+	at java.base/jdk.internal.reflect.MethodHandleBooleanFieldAccessorImpl.set(MethodHandleBooleanFieldAccessorImpl.java:111)
+	at java.base/java.lang.reflect.Field.set(Field.java:836)
+	at org.hibernate.property.access.spi.SetterFieldImpl.set(SetterFieldImpl.java:56)
+	... 92 common frames omitted
+2026-02-06 16:26:19,695 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-06 16:26:19,703 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-06 16:26:19,707 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 16:26:19,709 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-06 16:26:19,714 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2026-02-06 16:26:29,703 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 27316 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-06 16:26:29,706 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-06 16:26:29,893 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-06 16:26:30,252 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06 16:26:30,300 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 40 ms. Found 2 JPA repository interfaces.
+2026-02-06 16:26:30,748 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-06 16:26:30,758 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-06 16:26:30,764 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-06 16:26:30,766 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-06 16:26:30,820 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1063 ms
+2026-02-06 16:26:30,943 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-06 16:26:30,985 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-06 16:26:31,356 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06 16:26:31,384 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-06 16:26:31,533 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@126254ec
+2026-02-06 16:26:31,538 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-06 16:26:31,612 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-06 16:26:32,373 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-06 16:26:32,438 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 16:26:32,511 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-06 16:26:33,142 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-06 16:26:33,373 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-06 16:26:33,389 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-06 16:26:33,396 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 4.198 seconds (process running for 4.555)
+2026-02-06 16:26:39,568 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-06 16:26:39,569 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2026-02-06 16:26:39,572 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Completed initialization in 2 ms
+2026-02-06 16:26:39,638 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-06 16:26:48,267 INFO c.s.k.c.SchoolController {deleteSchool} [http-nio-8081-exec-3] DELETE /schools/3
+2026-02-06 16:26:51,720 INFO c.s.k.c.SchoolController {deleteSchool} [http-nio-8081-exec-2] DELETE /schools/4
+2026-02-06 16:26:54,536 INFO c.s.k.c.SchoolController {deleteSchool} [http-nio-8081-exec-7] DELETE /schools/5
+2026-02-06 16:26:57,682 INFO c.s.k.c.SchoolController {deleteSchool} [http-nio-8081-exec-5] DELETE /schools/6
+2026-02-06 16:27:00,627 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-10] GET /schools params: name=null, city=null
+2026-02-06 16:27:05,605 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-9] BEGIN getAll
+2026-02-06 16:27:05,615 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-9] END getAll
+2026-02-06 16:27:56,372 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-06 16:27:56,380 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-06 16:27:56,383 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 16:27:56,385 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-06 16:27:56,391 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2026-02-06 16:28:05,810 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 27328 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-06 16:28:05,814 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-06 16:28:05,983 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-06 16:28:06,346 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06 16:28:06,391 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 38 ms. Found 2 JPA repository interfaces.
+2026-02-06 16:28:06,828 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-06 16:28:06,838 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-06 16:28:06,840 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-06 16:28:06,841 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-06 16:28:06,886 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1026 ms
+2026-02-06 16:28:07,003 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-06 16:28:07,048 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-06 16:28:07,394 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06 16:28:07,418 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-06 16:28:07,546 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@275902e1
+2026-02-06 16:28:07,548 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-06 16:28:07,612 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-06 16:28:08,339 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-06 16:28:08,401 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 16:28:08,469 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-06 16:28:09,062 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-06 16:28:09,297 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-06 16:28:09,313 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-06 16:28:09,321 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 3.973 seconds (process running for 4.293)
+2026-02-06 16:28:21,545 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-06 16:28:21,546 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2026-02-06 16:28:21,549 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Completed initialization in 2 ms
+2026-02-06 16:28:21,774 INFO c.s.k.c.SchoolController {addSchool} [http-nio-8081-exec-1] POST /schools
+2026-02-06 16:28:27,671 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-5] GET /schools params: name=null, city=null
+2026-02-06 16:28:43,511 INFO c.s.k.c.ProjectController {addProject} [http-nio-8081-exec-2] BEGIN addProject
+2026-02-06 16:28:43,554 INFO c.s.k.c.ProjectController {addProject} [http-nio-8081-exec-2] END addProject
+2026-02-06 16:28:46,860 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-4] BEGIN getAll
+2026-02-06 16:28:46,875 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-4] END getAll
+2026-02-06 16:30:31,767 INFO c.s.k.c.SchoolController {modifySchool} [http-nio-8081-exec-3] PUT /schools/7
+2026-02-06 16:30:34,703 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-7] GET /schools params: name=null, city=null
+2026-02-06 16:31:48,975 WARN o.s.w.s.h.AbstractHandlerExceptionResolver {logException} [http-nio-8081-exec-8] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' is not supported]
+2026-02-06 16:32:55,223 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-10] BEGIN getAll
+2026-02-06 16:32:55,233 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-10] END getAll
+2026-02-06 16:33:08,871 INFO c.s.k.c.ProjectController {modifyProject} [http-nio-8081-exec-5] BEGIN modifyProject
+2026-02-06 16:33:08,882 INFO c.s.k.c.ProjectController {modifyProject} [http-nio-8081-exec-5] END modifyProject
+2026-02-06 16:33:15,751 INFO c.s.k.c.ProjectController {modifyProject} [http-nio-8081-exec-2] BEGIN modifyProject
+2026-02-06 16:33:15,763 ERROR c.s.k.c.ProjectController {handleProjectNotFoundException} [http-nio-8081-exec-2] Project does not exist
+com.svalero.komorebiApi.exception.ProjectNotFoundException: Project does not exist
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.svalero.komorebiApi.service.ProjectService.modify(ProjectService.java:67)
+	at com.svalero.komorebiApi.controller.ProjectController.modifyProject(ProjectController.java:60)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:650)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-06 16:35:07,935 INFO c.s.k.c.SchoolController {addSchool} [http-nio-8081-exec-3] POST /schools
+2026-02-06 16:35:12,169 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-6] BEGIN getAll
+2026-02-06 16:35:12,179 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-6] END getAll
+2026-02-06 16:35:22,668 INFO c.s.k.c.ProjectController {addProject} [http-nio-8081-exec-7] BEGIN addProject
+2026-02-06 16:35:22,680 INFO c.s.k.c.ProjectController {addProject} [http-nio-8081-exec-7] END addProject
+2026-02-06 16:35:26,280 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-8] BEGIN getAll
+2026-02-06 16:35:26,289 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-8] END getAll
+2026-02-06 16:35:43,367 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-9] BEGIN getAll
+2026-02-06 16:35:43,460 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-9] END getAll
+2026-02-06 16:35:50,723 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-1] BEGIN getAll
+2026-02-06 16:35:50,727 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-1] END getAll
+2026-02-06 16:35:58,901 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-5] BEGIN getAll
+2026-02-06 16:35:58,908 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-5] END getAll
+2026-02-06 16:36:38,272 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-2] BEGIN getAll
+2026-02-06 16:36:38,291 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-2] END getAll
+2026-02-06 16:36:49,801 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-4] BEGIN getAll
+2026-02-06 16:36:49,807 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-4] END getAll
+2026-02-06 16:37:22,018 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-3] BEGIN getAll
+2026-02-06 16:37:22,024 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-3] END getAll
+2026-02-06 16:37:40,736 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-6] BEGIN getAll
+2026-02-06 16:37:40,742 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-6] END getAll
+2026-02-06 16:38:12,093 INFO c.s.k.c.ProjectController {modifyProject} [http-nio-8081-exec-8] BEGIN modifyProject
+2026-02-06 16:38:12,103 INFO c.s.k.c.ProjectController {modifyProject} [http-nio-8081-exec-8] END modifyProject
+2026-02-06 16:38:15,479 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-9] BEGIN getAll
+2026-02-06 16:38:15,484 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-9] END getAll
+2026-02-06 16:38:20,382 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-10] BEGIN getAll
+2026-02-06 16:38:20,389 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-10] END getAll
+2026-02-06 16:38:46,597 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-1] BEGIN getAll
+2026-02-06 16:38:46,603 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-1] END getAll
+2026-02-06 16:39:43,480 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-5] GET /schools params: name=Herma, city=null
+2026-02-06 16:39:54,972 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=Zaragoza
+2026-02-06 16:40:12,067 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-06 16:40:12,073 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-06 16:40:12,076 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 16:40:12,078 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-06 16:40:12,083 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

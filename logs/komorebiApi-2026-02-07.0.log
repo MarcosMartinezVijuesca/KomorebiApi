@@ -1,0 +1,891 @@
+2026-02-07 09:17:11,755 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 17184 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-07 09:17:11,762 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-07 09:17:12,022 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-07 09:17:12,361 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-07 09:17:12,426 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 55 ms. Found 2 JPA repository interfaces.
+2026-02-07 09:17:12,935 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-07 09:17:12,947 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-07 09:17:12,951 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-07 09:17:12,951 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-07 09:17:13,031 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1222 ms
+2026-02-07 09:17:13,188 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-07 09:17:13,263 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-07 09:17:13,763 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-07 09:17:13,803 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-07 09:17:14,058 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2adc1e84
+2026-02-07 09:17:14,061 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-07 09:17:14,193 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-07 09:17:15,127 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-07 09:17:15,239 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-07 09:17:15,336 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-07 09:17:16,090 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-07 09:17:16,353 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-07 09:17:16,376 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-07 09:17:16,383 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 5.19 seconds (process running for 5.591)
+2026-02-07 09:20:23,068 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-07 09:20:23,078 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2026-02-07 09:20:23,082 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Completed initialization in 2 ms
+2026-02-07 09:20:23,167 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-7] GET /schools params: name=null, city=null
+2026-02-07 09:20:23,167 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-07 09:20:44,515 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-07 09:21:15,598 INFO c.s.k.c.SchoolController {addSchool} [http-nio-8081-exec-9] POST /schools
+2026-02-07 09:21:20,812 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-6] GET /schools params: name=null, city=null
+2026-02-07 09:21:55,640 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-5] GET /schools params: name=null, city=null
+2026-02-07 09:23:34,288 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-07 09:23:34,293 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-9] GET /schools params: name=null, city=null
+2026-02-07 09:25:12,132 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-4] GET /schools params: name=null, city=null
+2026-02-07 09:25:12,148 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-07 09:26:42,450 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-7] GET /schools params: name=null, city=null
+2026-02-07 09:26:42,450 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-07 09:30:35,509 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-6] GET /schools params: name=null, city=null
+2026-02-07 09:30:35,558 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-3] GET /schools params: name=null, city=null
+2026-02-07 09:34:39,348 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-5] GET /schools params: name=null, city=null
+2026-02-07 09:54:19,474 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-07 09:54:19,488 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-07 09:54:19,503 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-07 09:54:19,523 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-07 09:54:19,529 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2026-02-07 10:14:51,485 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 14564 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-07 10:14:51,489 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-07 10:14:51,723 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-07 10:14:52,071 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-07 10:14:52,128 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces.
+2026-02-07 10:14:52,651 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-07 10:14:52,666 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-07 10:14:52,671 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-07 10:14:52,672 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-07 10:14:52,733 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1198 ms
+2026-02-07 10:14:52,872 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-07 10:14:52,959 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-07 10:14:53,487 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-07 10:14:53,538 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-07 10:14:53,724 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@275902e1
+2026-02-07 10:14:53,725 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-07 10:14:53,849 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-07 10:14:54,871 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-07 10:14:54,989 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-07 10:14:55,107 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-07 10:14:55,905 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-07 10:14:56,190 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-07 10:14:56,214 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-07 10:14:56,219 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 5.237 seconds (process running for 5.607)
+2026-02-07 10:15:28,753 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-07 10:15:28,754 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-2] Initializing Servlet 'dispatcherServlet'
+2026-02-07 10:15:28,756 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-2] Completed initialization in 2 ms
+2026-02-07 10:15:28,819 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-07 10:15:28,819 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-07 10:15:35,831 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-3] GET /schools params: name=null, city=null
+2026-02-07 10:15:41,599 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-4] GET /schools params: name=null, city=null
+2026-02-07 10:20:20,271 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-9] GET /schools params: name=null, city=null
+2026-02-07 10:20:20,282 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-7] GET /schools params: name=null, city=null
+2026-02-07 10:20:25,143 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-07 10:20:50,768 INFO c.s.k.c.SchoolController {addSchool} [http-nio-8081-exec-1] POST /schools
+2026-02-07 10:20:54,833 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-3] GET /schools params: name=null, city=null
+2026-02-07 10:21:09,636 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-4] GET /schools params: name=null, city=null
+2026-02-07 10:29:54,311 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 9360 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-07 10:29:54,314 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-07 10:29:54,573 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-07 10:29:54,925 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-07 10:29:54,984 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 48 ms. Found 2 JPA repository interfaces.
+2026-02-07 10:29:55,444 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-07 10:29:55,456 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-07 10:29:55,459 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-07 10:29:55,459 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-07 10:29:55,531 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1170 ms
+2026-02-07 10:29:55,678 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-07 10:29:55,744 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-07 10:29:56,238 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-07 10:29:56,283 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-07 10:29:56,486 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@57927bc9
+2026-02-07 10:29:56,488 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-07 10:29:56,601 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-07 10:29:57,596 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-07 10:29:57,693 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-07 10:29:57,794 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-07 10:29:58,621 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-07 10:29:58,886 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-07 10:29:58,911 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-07 10:29:58,915 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 5.149 seconds (process running for 5.533)
+2026-02-07 10:31:53,086 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-07 10:31:53,087 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2026-02-07 10:31:53,089 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Completed initialization in 2 ms
+2026-02-07 10:31:53,130 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-07 10:38:16,734 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-6] GET /schools params: name=null, city=null
+2026-02-07 10:38:24,799 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-4] BEGIN getAll
+2026-02-07 10:38:24,834 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-4] END getAll
+2026-02-07 10:39:38,409 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-07 10:40:35,798 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-9] GET /schools params: name=null, city=null
+2026-02-07 10:40:39,216 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-1] BEGIN getAll
+2026-02-07 10:40:39,227 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-1] END getAll
+2026-02-07 10:40:52,221 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-6] BEGIN getAll
+2026-02-07 10:40:52,230 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-6] END getAll
+2026-02-07 10:40:55,819 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-4] BEGIN getAll
+2026-02-07 10:40:55,826 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-4] END getAll
+2026-02-07 10:41:06,114 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-07 10:41:10,584 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-9] BEGIN getAll
+2026-02-07 10:41:10,593 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-9] END getAll
+2026-02-07 11:06:51,606 WARN c.z.h.p.HikariPool$HouseKeeper {run} [HikariPool-1:housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m54s605ms971µs).
+2026-02-07 11:07:00,314 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-07 11:07:00,335 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-07 11:07:00,362 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-07 11:07:00,391 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-07 11:07:00,400 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2026-02-07 11:07:46,252 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 11196 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-07 11:07:46,255 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-07 11:07:46,527 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-07 11:07:46,874 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-07 11:07:46,939 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 55 ms. Found 2 JPA repository interfaces.
+2026-02-07 11:07:47,456 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-07 11:07:47,471 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-07 11:07:47,475 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-07 11:07:47,476 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-07 11:07:47,545 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1251 ms
+2026-02-07 11:07:47,691 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-07 11:07:47,768 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-07 11:07:48,363 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-07 11:07:48,411 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-07 11:07:48,597 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@323efafe
+2026-02-07 11:07:48,599 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-07 11:07:48,725 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-07 11:07:49,716 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-07 11:07:49,869 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-07 11:07:49,988 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-07 11:07:50,802 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-07 11:07:51,078 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-07 11:07:51,096 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-07 11:07:51,102 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 5.436 seconds (process running for 5.859)
+2026-02-07 11:24:30,725 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-07 11:24:30,735 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2026-02-07 11:24:30,767 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Completed initialization in 32 ms
+2026-02-07 11:24:31,181 INFO c.s.k.c.SchoolController {addSchool} [http-nio-8081-exec-1] POST /schools
+2026-02-07 11:24:56,679 ERROR c.s.k.c.SchoolController {handleValidationException} [http-nio-8081-exec-3] Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.svalero.komorebiApi.domain.dto.SchoolOutDto> com.svalero.komorebiApi.controller.SchoolController.addSchool(com.svalero.komorebiApi.domain.dto.SchoolInDto): [Field error in object 'schoolInDto' on field 'name': rejected value [null]; codes [NotNull.schoolInDto.name,NotNull.name,NotNull.java.lang.String,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [schoolInDto.name,name]; arguments []; default message [name]]; default message [name is mandatory and cannot be empty]] 
+org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.svalero.komorebiApi.domain.dto.SchoolOutDto> com.svalero.komorebiApi.controller.SchoolController.addSchool(com.svalero.komorebiApi.domain.dto.SchoolInDto): [Field error in object 'schoolInDto' on field 'name': rejected value [null]; codes [NotNull.schoolInDto.name,NotNull.name,NotNull.java.lang.String,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [schoolInDto.name,name]; arguments []; default message [name]]; default message [name is mandatory and cannot be empty]] 
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:159)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:230)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:180)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-07 11:25:43,639 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-4] GET /schools params: name=null, city=null
+2026-02-07 11:25:55,376 INFO c.s.k.c.SchoolController {deleteSchool} [http-nio-8081-exec-5] DELETE /schools/12
+2026-02-07 11:26:30,473 INFO c.s.k.c.SchoolController {modifySchool} [http-nio-8081-exec-6] PUT /schools/7
+2026-02-07 11:27:35,944 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-7] GET /schools/99
+2026-02-07 11:27:35,951 ERROR c.s.k.c.SchoolController {handleSchoolNotFoundException} [http-nio-8081-exec-7] This school does not exist
+com.svalero.komorebiApi.exception.SchoolNotFoundException: This school does not exist
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.svalero.komorebiApi.service.SchoolService.findById(SchoolService.java:39)
+	at com.svalero.komorebiApi.controller.SchoolController.getSchool(SchoolController.java:45)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-07 11:29:46,495 INFO c.s.k.c.ProjectController {getProject} [http-nio-8081-exec-9] BEGIN getProject
+2026-02-07 11:29:46,511 ERROR c.s.k.c.ProjectController {handleProjectNotFoundException} [http-nio-8081-exec-9] Project does not exist
+com.svalero.komorebiApi.exception.ProjectNotFoundException: Project does not exist
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.svalero.komorebiApi.service.ProjectService.get(ProjectService.java:49)
+	at com.svalero.komorebiApi.controller.ProjectController.getProject(ProjectController.java:44)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-07 11:29:51,862 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-10] BEGIN getAll
+2026-02-07 11:29:52,132 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-10] END getAll
+2026-02-07 11:29:58,436 INFO c.s.k.c.ProjectController {getProject} [http-nio-8081-exec-2] BEGIN getProject
+2026-02-07 11:29:58,441 INFO c.s.k.c.ProjectController {getProject} [http-nio-8081-exec-2] END getProject
+2026-02-07 11:32:42,996 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-07 11:32:43,005 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-07 11:32:43,013 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-07 11:32:43,016 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-07 11:32:43,019 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2026-02-07 11:47:26,879 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 28660 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-07 11:47:26,882 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-07 11:47:27,184 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-07 11:47:27,535 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-07 11:47:27,602 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 57 ms. Found 2 JPA repository interfaces.
+2026-02-07 11:47:28,143 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-07 11:47:28,159 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-07 11:47:28,163 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-07 11:47:28,163 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-07 11:47:28,238 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1306 ms
+2026-02-07 11:47:28,398 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-07 11:47:28,484 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-07 11:47:29,017 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-07 11:47:29,056 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-07 11:47:29,250 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@57927bc9
+2026-02-07 11:47:29,252 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-07 11:47:29,382 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-07 11:47:30,406 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-07 11:47:30,535 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-07 11:47:30,626 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-07 11:47:31,433 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-07 11:47:31,703 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-07 11:47:31,728 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-07 11:47:31,732 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 5.427 seconds (process running for 5.841)
+2026-02-07 11:47:51,739 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-07 11:47:51,741 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2026-02-07 11:47:51,746 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Completed initialization in 3 ms
+2026-02-07 11:47:51,799 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-4] GET /schools params: name=null, city=null
+2026-02-07 11:47:51,799 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-07 11:48:01,497 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-5] GET /schools params: name=null, city=null
+2026-02-07 11:48:34,239 INFO c.s.k.c.SchoolController {addSchool} [http-nio-8081-exec-3] POST /schools
+2026-02-07 11:48:37,051 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-07 11:48:43,968 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-6] GET /schools params: name=null, city=null
+2026-02-07 11:48:57,413 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-9] GET /schools params: name=null, city=null
+2026-02-07 11:49:17,621 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=Escolapias, city=null
+2026-02-07 11:54:38,686 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-07 11:54:38,697 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-07 11:54:38,701 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-07 11:54:38,705 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-07 11:54:38,715 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2026-02-07 12:08:46,857 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 23676 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-07 12:08:46,861 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-07 12:08:47,137 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-07 12:08:47,452 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-07 12:08:47,511 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 50 ms. Found 2 JPA repository interfaces.
+2026-02-07 12:08:48,008 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-07 12:08:48,024 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-07 12:08:48,028 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-07 12:08:48,028 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-07 12:08:48,100 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1192 ms
+2026-02-07 12:08:48,267 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-07 12:08:48,328 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-07 12:08:48,821 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-07 12:08:48,861 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-07 12:08:49,064 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@323efafe
+2026-02-07 12:08:49,067 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-07 12:08:49,168 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-07 12:08:50,086 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-07 12:08:50,170 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-07 12:08:50,260 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-07 12:08:51,097 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-07 12:08:51,370 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-07 12:08:51,395 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-07 12:08:51,400 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 5.089 seconds (process running for 5.517)
+2026-02-07 12:11:02,905 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-07 12:11:02,907 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2026-02-07 12:11:02,910 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Completed initialization in 3 ms
+2026-02-07 12:11:03,011 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-07 12:15:23,302 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-3] GET /schools params: name=null, city=null
+2026-02-07 12:19:09,681 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-9] GET /schools params: name=null, city=null
+2026-02-07 12:19:13,015 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-6] GET /schools/7
+2026-02-07 12:19:19,021 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-7] GET /schools params: name=null, city=null
+2026-02-07 12:19:23,820 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-8] GET /schools/7
+2026-02-07 12:20:18,548 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-5] GET /schools/7
+2026-02-07 12:20:20,078 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-10] GET /schools params: name=null, city=null
+2026-02-07 12:20:21,995 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-1] GET /schools/8
+2026-02-07 12:20:23,443 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-07 12:21:02,298 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-3] GET /schools params: name=null, city=null
+2026-02-07 12:21:03,368 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-4] GET /schools/7
+2026-02-07 12:21:07,013 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-9] GET /schools params: name=null, city=null
+2026-02-07 12:21:48,766 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-6] GET /schools params: name=null, city=null
+2026-02-07 12:21:50,057 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-7] GET /schools/7
+2026-02-07 12:21:56,814 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-07 12:22:04,205 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-5] GET /schools/7
+2026-02-07 12:24:09,845 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-1] GET /schools/7
+2026-02-07 12:24:11,295 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-07 12:24:14,229 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-3] GET /schools/7
+2026-02-07 12:24:17,295 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-4] GET /schools params: name=null, city=null
+2026-02-07 12:24:38,379 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-9] GET /schools/7
+2026-02-07 12:24:40,014 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-6] GET /schools params: name=null, city=null
+2026-02-07 12:26:10,734 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-07 12:26:11,731 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-5] GET /schools/7
+2026-02-07 12:26:22,141 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-10] GET /schools params: name=null, city=null
+2026-02-07 12:34:32,974 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-07 12:34:34,637 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-3] GET /schools/7
+2026-02-07 12:34:35,773 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-4] GET /schools params: name=null, city=null
+2026-02-07 12:35:11,029 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-9] GET /schools params: name=null, city=null
+2026-02-07 12:35:12,494 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-6] GET /schools/8
+2026-02-07 12:35:50,196 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-7] GET /schools/8
+2026-02-07 12:35:51,299 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-07 12:35:53,073 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-5] GET /schools params: name=null, city=null
+2026-02-07 12:37:22,656 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-07 12:37:24,801 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-07 12:37:27,083 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-3] GET /schools/7
+2026-02-07 12:37:28,623 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-4] GET /schools params: name=null, city=null
+2026-02-07 13:00:11,687 WARN c.z.h.p.HikariPool$HouseKeeper {run} [HikariPool-1:housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m21s818ms453µs699ns).
+2026-02-07 13:03:29,776 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-07 13:03:29,890 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-07 13:03:29,991 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-07 13:03:30,060 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-07 13:03:30,084 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2026-02-07 13:03:49,291 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 26536 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-07 13:03:49,295 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-07 13:03:49,546 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-07 13:03:49,875 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-07 13:03:49,932 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces.
+2026-02-07 13:03:50,462 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-07 13:03:50,481 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-07 13:03:50,486 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-07 13:03:50,487 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-07 13:03:50,554 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1219 ms
+2026-02-07 13:03:50,729 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-07 13:03:50,798 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-07 13:03:51,404 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-07 13:03:51,456 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-07 13:03:51,742 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@126254ec
+2026-02-07 13:03:51,745 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-07 13:03:51,907 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-07 13:03:53,545 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-07 13:03:53,740 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-07 13:03:53,924 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-07 13:03:55,324 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-07 13:03:55,875 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-07 13:03:55,910 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-07 13:03:55,917 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 7.19 seconds (process running for 7.627)
+2026-02-07 13:08:57,584 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-07 13:08:57,589 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-2] Initializing Servlet 'dispatcherServlet'
+2026-02-07 13:08:57,623 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-2] Completed initialization in 34 ms
+2026-02-07 13:08:57,719 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-07 13:10:37,988 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-3] GET /schools params: name=null, city=null
+2026-02-07 13:10:49,265 INFO c.s.k.c.SchoolController {deleteSchool} [http-nio-8081-exec-5] DELETE /schools/9
+2026-02-07 13:10:57,778 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-7] GET /schools params: name=null, city=null
+2026-02-07 13:11:20,671 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-9] GET /schools params: name=null, city=null
+2026-02-07 13:11:30,062 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-10] BEGIN getAll
+2026-02-07 13:11:30,082 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-10] END getAll
+2026-02-07 13:23:31,045 WARN o.s.w.s.h.AbstractHandlerExceptionResolver {logException} [http-nio-8081-exec-5] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2026-02-07 13:24:25,534 WARN o.s.w.s.h.AbstractHandlerExceptionResolver {logException} [http-nio-8081-exec-7] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2026-02-07 13:26:04,437 ERROR c.s.k.c.ProjectController {handleException} [http-nio-8081-exec-3] Required request body is missing: public org.springframework.http.ResponseEntity<com.svalero.komorebiApi.domain.dto.ProjectOutDto> com.svalero.komorebiApi.controller.ProjectController.addProject(long,com.svalero.komorebiApi.domain.dto.ProjectInDto) throws com.svalero.komorebiApi.exception.SchoolNotFoundException
+org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<com.svalero.komorebiApi.domain.dto.ProjectOutDto> com.svalero.komorebiApi.controller.ProjectController.addProject(long,com.svalero.komorebiApi.domain.dto.ProjectInDto) throws com.svalero.komorebiApi.exception.SchoolNotFoundException
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:178)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:150)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:230)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:180)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-07 13:27:13,999 INFO c.s.k.c.ProjectController {addProject} [http-nio-8081-exec-2] BEGIN addProject
+2026-02-07 13:27:14,185 INFO c.s.k.c.ProjectController {addProject} [http-nio-8081-exec-2] END addProject
+2026-02-07 13:27:46,479 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-07 13:28:18,095 INFO c.s.k.c.SchoolController {addSchool} [http-nio-8081-exec-5] POST /schools
+2026-02-07 13:28:22,565 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-6] GET /schools params: name=null, city=null
+2026-02-07 13:28:35,561 INFO c.s.k.c.SchoolController {deleteSchool} [http-nio-8081-exec-7] DELETE /schools/10
+2026-02-07 13:28:38,605 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-9] GET /schools params: name=null, city=null
+2026-02-07 13:28:49,154 INFO c.s.k.c.SchoolController {modifySchool} [http-nio-8081-exec-10] PUT /schools/7
+2026-02-07 13:28:55,248 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-3] GET /schools params: name=null, city=null
+2026-02-07 13:29:03,364 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-2] GET /schools/7
+2026-02-07 13:29:08,342 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-4] BEGIN getAll
+2026-02-07 13:29:08,539 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-4] END getAll
+2026-02-07 13:29:27,324 INFO c.s.k.c.ProjectController {addProject} [http-nio-8081-exec-5] BEGIN addProject
+2026-02-07 13:29:27,350 INFO c.s.k.c.ProjectController {addProject} [http-nio-8081-exec-5] END addProject
+2026-02-07 13:29:43,279 INFO c.s.k.c.ProjectController {modifyProject} [http-nio-8081-exec-6] BEGIN modifyProject
+2026-02-07 13:29:43,331 INFO c.s.k.c.ProjectController {modifyProject} [http-nio-8081-exec-6] END modifyProject
+2026-02-07 13:30:13,729 INFO c.s.k.c.ProjectController {addProject} [http-nio-8081-exec-7] BEGIN addProject
+2026-02-07 13:30:13,748 INFO c.s.k.c.ProjectController {addProject} [http-nio-8081-exec-7] END addProject
+2026-02-07 13:30:16,409 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-9] BEGIN getAll
+2026-02-07 13:30:16,413 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-9] END getAll
+2026-02-07 13:30:25,645 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-10] BEGIN getAll
+2026-02-07 13:30:25,655 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-10] END getAll
+2026-02-07 13:56:49,036 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-5] GET /schools params: name=null, city=null
+2026-02-07 13:57:09,942 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-7] GET /schools params: name=null, city=null
+2026-02-07 13:57:16,387 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-07 13:57:33,902 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-9] BEGIN getAll
+2026-02-07 13:57:33,956 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-9] END getAll
+2026-02-07 13:57:33,982 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-10] BEGIN getAll
+2026-02-07 13:57:33,992 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-10] END getAll
+2026-02-07 13:57:49,768 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-3] GET /schools params: name=null, city=null
+2026-02-07 13:58:26,348 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-07 13:58:26,375 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-07 13:58:26,411 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-07 13:58:26,446 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-07 13:58:26,455 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2026-02-07 15:19:22,582 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 19544 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-07 15:19:22,586 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-07 15:19:22,854 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-07 15:19:23,176 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-07 15:19:23,229 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 44 ms. Found 2 JPA repository interfaces.
+2026-02-07 15:19:23,783 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-07 15:19:23,799 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-07 15:19:23,803 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-07 15:19:23,804 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-07 15:19:23,874 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1240 ms
+2026-02-07 15:19:24,021 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-07 15:19:24,088 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-07 15:19:24,590 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-07 15:19:24,631 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-07 15:19:24,809 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@323efafe
+2026-02-07 15:19:24,814 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-07 15:19:24,930 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-07 15:19:25,877 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-07 15:19:25,995 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-07 15:19:26,077 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-07 15:19:26,842 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-07 15:19:27,114 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-07 15:19:27,137 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-07 15:19:27,141 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 5.137 seconds (process running for 5.539)
+2026-02-07 15:20:44,760 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-07 15:20:44,761 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-2] Initializing Servlet 'dispatcherServlet'
+2026-02-07 15:20:44,764 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-2] Completed initialization in 3 ms
+2026-02-07 15:20:44,824 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-07 15:20:49,521 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-1] BEGIN getAll
+2026-02-07 15:20:49,556 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-1] END getAll
+2026-02-07 15:20:49,590 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-7] BEGIN getAll
+2026-02-07 15:20:49,600 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-7] END getAll
+2026-02-07 15:23:43,648 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-6] BEGIN getAll
+2026-02-07 15:23:43,666 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-6] END getAll
+2026-02-07 15:23:51,750 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-3] BEGIN getAll
+2026-02-07 15:23:51,762 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-3] END getAll
+2026-02-07 15:23:57,422 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-8] BEGIN getAll
+2026-02-07 15:23:57,441 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-8] END getAll
+2026-02-07 15:24:01,703 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-9] GET /schools params: name=null, city=null
+2026-02-07 15:24:01,735 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-10] GET /schools params: name=null, city=null
+2026-02-07 15:24:04,086 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-2] BEGIN getAll
+2026-02-07 15:24:04,097 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-2] END getAll
+2026-02-07 15:24:04,119 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-1] BEGIN getAll
+2026-02-07 15:24:04,134 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-1] END getAll
+2026-02-07 15:25:04,639 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-4] BEGIN getAll
+2026-02-07 15:25:04,649 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-4] END getAll
+2026-02-07 15:25:26,279 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-6] GET /schools params: name=null, city=null
+2026-02-07 15:25:26,329 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-5] GET /schools params: name=null, city=null
+2026-02-07 15:25:29,130 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-3] BEGIN getAll
+2026-02-07 15:25:29,138 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-3] END getAll
+2026-02-07 15:25:29,157 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-8] BEGIN getAll
+2026-02-07 15:25:29,166 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-8] END getAll
+2026-02-07 15:25:52,821 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-9] GET /schools params: name=null, city=null
+2026-02-07 15:25:52,846 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-10] GET /schools params: name=null, city=null
+2026-02-07 15:26:30,475 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-2] BEGIN getAll
+2026-02-07 15:26:30,484 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-2] END getAll
+2026-02-07 15:26:30,501 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-1] BEGIN getAll
+2026-02-07 15:26:30,509 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-1] END getAll
+2026-02-07 15:26:34,964 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-7] GET /schools params: name=null, city=null
+2026-02-07 15:26:34,986 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-4] GET /schools params: name=null, city=null
+2026-02-07 15:32:09,359 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-5] GET /schools params: name=null, city=null
+2026-02-07 15:32:13,936 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-8] BEGIN getAll
+2026-02-07 15:32:13,943 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-8] END getAll
+2026-02-07 15:33:56,841 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-10] GET /schools params: name=null, city=null
+2026-02-07 15:33:57,055 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-07 15:34:09,803 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-07 15:37:12,855 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-5] GET /schools params: name=null, city=null
+2026-02-07 15:37:15,551 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-3] GET /schools/7
+2026-02-07 15:37:16,824 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-07 15:37:21,294 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-9] GET /schools/7
+2026-02-07 15:37:26,642 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-10] GET /schools params: name=null, city=null
+2026-02-07 15:50:19,266 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-07 15:50:20,676 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-7] GET /schools/7
+2026-02-07 15:50:24,937 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-6] GET /schools params: name=null, city=null
+2026-02-07 15:54:01,952 INFO c.s.k.c.SchoolController {deleteSchool} [http-nio-8081-exec-5] DELETE /schools/111
+2026-02-07 15:54:02,071 ERROR c.s.k.c.SchoolController {handleSchoolNotFoundException} [http-nio-8081-exec-5] This school does not exist
+com.svalero.komorebiApi.exception.SchoolNotFoundException: This school does not exist
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.svalero.komorebiApi.service.SchoolService.deleteActivity(SchoolService.java:63)
+	at com.svalero.komorebiApi.controller.SchoolController.deleteSchool(SchoolController.java:64)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:925)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:651)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-07 15:54:24,484 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=Escolapias, city=null
+2026-02-07 15:56:09,804 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-10] GET /schools params: name=null, city=null
+2026-02-07 15:56:09,813 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-07 15:56:17,740 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-07 15:56:22,866 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-7] GET /schools params: name=null, city=null
+2026-02-07 15:56:42,454 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-6] GET /schools params: name=null, city=null
+2026-02-07 15:56:47,637 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-5] BEGIN getAll
+2026-02-07 15:56:47,680 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-5] END getAll
+2026-02-07 15:56:58,581 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-07 15:57:17,650 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-2] GET /schools/7
+2026-02-07 15:57:19,353 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-7] GET /schools params: name=null, city=null
+2026-02-07 16:08:16,927 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-5] GET /schools params: name=null, city=null
+2026-02-07 16:08:18,155 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-3] GET /schools/7
+2026-02-07 16:08:19,733 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-07 16:08:21,390 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-10] GET /schools/14
+2026-02-07 16:08:22,937 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-9] GET /schools params: name=null, city=null
+2026-02-07 16:08:24,696 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-2] GET /schools/15
+2026-02-07 16:08:25,758 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-07 16:09:33,838 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-6] GET /schools params: name=null, city=null
+2026-02-07 16:10:10,096 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-4] GET /schools params: name=null, city=null
+2026-02-07 16:12:16,061 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-3] GET /schools params: name=null, city=null
+2026-02-07 16:12:24,159 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-07 16:21:53,413 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-9] GET /schools params: name=null, city=null
+2026-02-07 16:22:03,043 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-07 16:22:04,148 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-1] GET /schools/7
+2026-02-07 16:22:05,140 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-7] GET /schools params: name=null, city=null
+2026-02-07 16:22:07,539 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-6] GET /schools/11
+2026-02-07 16:22:09,147 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-4] GET /schools params: name=null, city=null
+2026-02-07 16:24:39,701 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-3] GET /schools params: name=null, city=null
+2026-02-07 16:27:26,472 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-10] GET /schools/7
+2026-02-07 16:27:55,642 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-9] GET /schools params: name=null, city=null
+2026-02-07 16:32:19,446 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-07 16:32:58,656 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-7] GET /schools params: name=null, city=null
+2026-02-07 16:33:06,874 INFO c.s.k.c.SchoolController {addSchool} [http-nio-8081-exec-4] POST /schools
+2026-02-07 16:33:12,262 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-3] GET /schools params: name=null, city=null
+2026-02-07 16:33:23,450 INFO c.s.k.c.SchoolController {deleteSchool} [http-nio-8081-exec-10] DELETE /schools/16
+2026-02-07 16:33:27,394 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-9] GET /schools params: name=null, city=null
+2026-02-07 16:33:45,782 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-07 16:33:49,732 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-7] BEGIN getAll
+2026-02-07 16:33:49,748 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-7] END getAll
+2026-02-07 16:34:16,973 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-4] GET /schools params: name=null, city=null
+2026-02-07 16:34:16,975 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-5] GET /schools params: name=null, city=null
+2026-02-07 16:34:24,223 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-3] GET /schools params: name=null, city=null
+2026-02-07 16:34:53,400 INFO c.s.k.c.SchoolController {addSchool} [http-nio-8081-exec-8] POST /schools
+2026-02-07 16:34:57,026 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-10] GET /schools params: name=null, city=null
+2026-02-07 16:35:12,078 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-4] GET /schools/7
+2026-02-07 16:35:14,125 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-5] GET /schools params: name=null, city=null
+2026-02-07 16:35:16,276 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-3] GET /schools/15
+2026-02-07 16:35:18,014 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-07 16:51:58,656 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-9] GET /schools params: name=null, city=null
+2026-02-07 16:52:00,677 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-2] GET /schools/7
+2026-02-07 16:52:02,200 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-07 17:12:10,250 WARN c.z.h.p.HikariPool$HouseKeeper {run} [HikariPool-1:housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m13s662ms676µs300ns).
+2026-02-07 17:12:57,508 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-6] GET /schools params: name=null, city=null
+2026-02-07 17:17:27,755 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-5] GET /schools params: name=null, city=null
+2026-02-07 17:17:29,535 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-3] GET /schools/7
+2026-02-07 17:17:30,711 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-07 17:17:58,857 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-9] GET /schools params: name=null, city=null
+2026-02-07 17:17:58,857 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-10] GET /schools params: name=null, city=null
+2026-02-07 17:18:12,424 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-07 17:23:33,215 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-5] GET /schools params: name=null, city=null
+2026-02-07 17:23:34,919 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-3] GET /schools/7
+2026-02-07 17:23:36,284 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-07 17:49:57,478 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-10] GET /schools params: name=null, city=null
+2026-02-07 17:50:15,909 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-07 17:50:25,508 INFO c.s.k.c.SchoolController {deleteSchool} [http-nio-8081-exec-6] DELETE /schools/17
+2026-02-07 17:50:29,548 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-4] GET /schools params: name=null, city=null
+2026-02-07 17:55:55,484 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-5] GET /schools params: name=null, city=null
+2026-02-07 17:56:01,973 INFO c.s.k.c.SchoolController {addSchool} [http-nio-8081-exec-3] POST /schools
+2026-02-07 17:56:35,579 ERROR c.s.k.c.SchoolController {handleValidationException} [http-nio-8081-exec-9] Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.svalero.komorebiApi.domain.dto.SchoolOutDto> com.svalero.komorebiApi.controller.SchoolController.addSchool(com.svalero.komorebiApi.domain.dto.SchoolInDto): [Field error in object 'schoolInDto' on field 'name': rejected value [null]; codes [NotNull.schoolInDto.name,NotNull.name,NotNull.java.lang.String,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [schoolInDto.name,name]; arguments []; default message [name]]; default message [name is mandatory and cannot be empty]] 
+org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.svalero.komorebiApi.domain.dto.SchoolOutDto> com.svalero.komorebiApi.controller.SchoolController.addSchool(com.svalero.komorebiApi.domain.dto.SchoolInDto): [Field error in object 'schoolInDto' on field 'name': rejected value [null]; codes [NotNull.schoolInDto.name,NotNull.name,NotNull.java.lang.String,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [schoolInDto.name,name]; arguments []; default message [name]]; default message [name is mandatory and cannot be empty]] 
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:159)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:230)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:180)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-07 17:57:10,218 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-10] GET /schools params: name=null, city=Zaragoza
+2026-02-07 17:57:40,242 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-07 17:58:07,232 INFO c.s.k.c.SchoolController {addSchool} [http-nio-8081-exec-1] POST /schools
+2026-02-07 17:58:10,793 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-6] GET /schools params: name=null, city=null
+2026-02-07 17:58:51,347 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-4] GET /schools params: name=null, city=null
+2026-02-07 17:59:04,155 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-3] BEGIN getAll
+2026-02-07 17:59:04,188 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-3] END getAll
+2026-02-07 17:59:09,351 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-10] GET /schools params: name=null, city=null
+2026-02-07 17:59:18,774 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-6] GET /schools params: name=null, city=null
+2026-02-07 17:59:37,492 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-7] GET /schools/7
+2026-02-07 17:59:40,618 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-4] GET /schools params: name=null, city=null
+2026-02-07 18:17:28,436 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-3] GET /schools/7
+2026-02-07 18:17:34,661 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-07 18:17:36,234 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-9] GET /schools/7
+2026-02-07 18:17:37,723 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-10] GET /schools params: name=null, city=null
+2026-02-07 18:17:39,256 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-2] GET /schools/11
+2026-02-07 18:18:03,555 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-07 18:18:05,747 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-6] GET /schools/18
+2026-02-07 18:33:25,666 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-07 18:33:25,722 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-07 18:33:25,764 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-07 18:33:25,792 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-07 18:33:25,805 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

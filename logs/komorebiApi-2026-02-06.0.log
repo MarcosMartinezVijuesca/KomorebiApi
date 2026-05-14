@@ -1,0 +1,145 @@
+2026-02-06 19:04:36,607 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 24208 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-06 19:04:36,611 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-06 19:04:38,105 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-06 19:04:39,939 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06 19:04:40,127 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 128 ms. Found 2 JPA repository interfaces.
+2026-02-06 19:04:41,133 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-06 19:04:41,146 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-06 19:04:41,148 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-06 19:04:41,148 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-06 19:04:41,210 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 4338 ms
+2026-02-06 19:04:41,498 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-06 19:04:41,577 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-06 19:04:42,074 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06 19:04:42,118 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-06 19:04:42,478 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@459e120b
+2026-02-06 19:04:42,480 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-06 19:04:42,605 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-06 19:04:43,725 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-06 19:04:43,834 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 19:04:43,931 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-06 19:04:44,885 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-06 19:04:45,176 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-06 19:04:45,200 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-06 19:04:45,205 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 11.419 seconds (process running for 12.669)
+2026-02-06 19:04:45,928 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-06 19:04:45,936 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-06 19:04:45,939 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 19:04:45,942 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-06 19:04:45,949 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2026-02-06 19:05:13,128 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 11692 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-06 19:05:13,131 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-06 19:05:13,325 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-06 19:05:13,663 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06 19:05:13,708 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 37 ms. Found 2 JPA repository interfaces.
+2026-02-06 19:05:14,115 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-06 19:05:14,127 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-06 19:05:14,130 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-06 19:05:14,131 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-06 19:05:14,180 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1001 ms
+2026-02-06 19:05:14,309 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-06 19:05:14,353 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-06 19:05:14,721 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06 19:05:14,747 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-06 19:05:14,885 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@126254ec
+2026-02-06 19:05:14,889 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-06 19:05:14,966 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-06 19:05:15,750 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-06 19:05:15,832 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 19:05:15,905 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-06 19:05:16,556 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-06 19:05:16,817 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-06 19:05:16,833 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-06 19:05:16,838 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 4.178 seconds (process running for 4.533)
+2026-02-06 19:18:35,420 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-3] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-06 19:18:35,440 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-3] Initializing Servlet 'dispatcherServlet'
+2026-02-06 19:18:35,517 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-3] Completed initialization in 75 ms
+2026-02-06 19:18:35,676 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-3] GET /schools params: name=null, city=null
+2026-02-06 19:18:35,676 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-06 19:19:09,523 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-5] GET /schools params: name=null, city=null
+2026-02-06 19:20:15,776 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-7] GET /schools params: name=null, city=null
+2026-02-06 19:20:15,802 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-06 19:26:38,434 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-3] GET /schools params: name=null, city=null
+2026-02-06 19:26:38,434 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-06 19:55:45,677 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-06 19:55:45,707 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-06 19:55:45,739 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 19:55:45,774 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-06 19:55:45,782 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2026-02-06 23:15:29,128 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 23092 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-06 23:15:29,132 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-06 23:15:29,408 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-06 23:15:29,795 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-06 23:15:29,860 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 53 ms. Found 2 JPA repository interfaces.
+2026-02-06 23:15:30,373 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-06 23:15:30,388 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-06 23:15:30,394 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-06 23:15:30,394 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-06 23:15:30,464 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1279 ms
+2026-02-06 23:15:30,630 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-06 23:15:30,694 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-06 23:15:31,172 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-06 23:15:31,211 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-06 23:15:31,395 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c788d08
+2026-02-06 23:15:31,398 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-06 23:15:31,541 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-06 23:15:32,469 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-06 23:15:32,588 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 23:15:32,672 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-06 23:15:33,444 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-06 23:15:33,733 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-06 23:15:33,756 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-06 23:15:33,762 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 5.231 seconds (process running for 5.629)
+2026-02-06 23:18:16,977 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-06 23:18:16,983 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2026-02-06 23:18:16,997 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-1] Completed initialization in 14 ms
+2026-02-06 23:18:17,068 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-4] GET /schools params: name=null, city=null
+2026-02-06 23:18:17,068 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-06 23:18:34,043 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-3] GET /schools params: name=null, city=null
+2026-02-06 23:21:36,370 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-06 23:21:36,379 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-06 23:22:21,390 INFO c.s.k.c.SchoolController {addSchool} [http-nio-8081-exec-9] POST /schools
+2026-02-06 23:22:24,678 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-10] GET /schools params: name=null, city=null
+2026-02-06 23:22:55,611 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-3] GET /schools params: name=null, city=null
+2026-02-06 23:24:37,389 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-2] GET /schools params: name=null, city=null
+2026-02-06 23:24:37,391 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-06 23:25:04,388 INFO c.s.k.c.SchoolController {addSchool} [http-nio-8081-exec-9] POST /schools
+2026-02-06 23:25:08,652 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-10] GET /schools params: name=null, city=null
+2026-02-06 23:30:36,328 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-06 23:30:36,348 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-06 23:30:36,391 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-06 23:30:36,419 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-06 23:30:36,453 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

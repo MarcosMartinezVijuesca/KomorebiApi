@@ -1,0 +1,56 @@
+2026-02-10 01:38:13,571 INFO o.s.b.StartupInfoLogger {logStarting} [main] Starting KomorebiApiApplication using Java 21.0.6 with PID 12728 (C:\Users\Jorgeten\Desktop\komorebiApi\target\classes started by Jorgeten in C:\Users\Jorgeten\Desktop\komorebiApi)
+2026-02-10 01:38:13,576 INFO o.s.b.SpringApplication {logStartupProfileInfo} [main] No active profile set, falling back to 1 default profile: "default"
+2026-02-10 01:38:13,813 INFO o.h.v.i.u.Version {<clinit>} [background-preinit] HV000001: Hibernate Validator 9.0.1.Final
+2026-02-10 01:38:14,148 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-10 01:38:14,212 INFO o.s.d.r.c.RepositoryConfigurationDelegate {registerRepositoriesIn} [main] Finished Spring Data repository scanning in 55 ms. Found 2 JPA repository interfaces.
+2026-02-10 01:38:14,688 INFO o.s.b.t.TomcatWebServer {initialize} [main] Tomcat initialized with port 8081 (http)
+2026-02-10 01:38:14,702 INFO o.a.j.l.DirectJDKLog {log} [main] Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-10 01:38:14,706 INFO o.a.j.l.DirectJDKLog {log} [main] Starting service [Tomcat]
+2026-02-10 01:38:14,706 INFO o.a.j.l.DirectJDKLog {log} [main] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-10 01:38:14,776 INFO o.s.b.w.c.s.WebApplicationContextInitializer {prepareWebApplicationContext} [main] Root WebApplicationContext: initialization completed in 1154 ms
+2026-02-10 01:38:14,930 INFO o.h.j.i.u.LogHelper {logPersistenceUnitInformation} [main] HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-10 01:38:15,009 INFO o.h.Version {logVersion} [main] HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-10 01:38:15,493 INFO o.s.o.j.p.SpringPersistenceUnitInfo {addTransformer} [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-10 01:38:15,536 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Starting...
+2026-02-10 01:38:15,861 INFO c.z.h.p.HikariPool {checkFailFast} [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@573870cb
+2026-02-10 01:38:15,863 INFO c.z.h.HikariDataSource {getConnection} [main] HikariPool-1 - Start completed.
+2026-02-10 01:38:16,001 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator {logConnectionInfo} [main] HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: komorebidb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-10 01:38:16,922 INFO o.h.e.t.j.p.i.JtaPlatformInitiator {initiateService} [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-10 01:38:17,036 INFO o.s.o.j.AbstractEntityManagerFactoryBean {buildNativeEntityManagerFactory} [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-10 01:38:17,129 INFO o.s.d.j.r.q.QueryEnhancerFactories {<clinit>} [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-10 01:38:17,891 WARN o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration {openEntityManagerInViewInterceptor} [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-10 01:38:18,164 INFO o.a.j.l.DirectJDKLog {log} [main] Starting ProtocolHandler ["http-nio-8081"]
+2026-02-10 01:38:18,188 INFO o.s.b.t.TomcatWebServer {start} [main] Tomcat started on port 8081 (http) with context path '/'
+2026-02-10 01:38:18,192 INFO o.s.b.StartupInfoLogger {logStarted} [main] Started KomorebiApiApplication in 5.28 seconds (process running for 5.678)
+2026-02-10 01:38:40,717 INFO o.a.j.l.DirectJDKLog {log} [http-nio-8081-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-10 01:38:40,719 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-2] Initializing Servlet 'dispatcherServlet'
+2026-02-10 01:38:40,720 INFO o.s.w.s.FrameworkServlet {initServletBean} [http-nio-8081-exec-2] Completed initialization in 1 ms
+2026-02-10 01:38:46,392 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-4] GET /schools params: name=null, city=null
+2026-02-10 01:41:10,002 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-5] GET /schools params: name=null, city=null
+2026-02-10 01:41:10,003 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-7] GET /schools params: name=null, city=null
+2026-02-10 01:41:23,545 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-10 01:42:33,814 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-10 01:42:38,326 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-4] GET /schools/7
+2026-02-10 01:42:39,650 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-3] GET /schools params: name=null, city=null
+2026-02-10 01:42:48,478 INFO c.s.k.c.SchoolController {getSchool} [http-nio-8081-exec-6] GET /schools/13
+2026-02-10 01:42:51,463 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-7] GET /schools params: name=null, city=null
+2026-02-10 01:44:18,589 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-8] GET /schools params: name=null, city=null
+2026-02-10 01:44:26,493 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-2] BEGIN getAll
+2026-02-10 01:44:26,533 INFO c.s.k.c.ProjectController {getAll} [http-nio-8081-exec-2] END getAll
+2026-02-10 01:44:28,988 INFO c.s.k.c.SchoolController {getAllSchools} [http-nio-8081-exec-1] GET /schools params: name=null, city=null
+2026-02-10 01:44:41,926 INFO o.s.b.t.GracefulShutdown {shutDownGracefully} [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-10 01:44:41,935 INFO o.s.b.t.GracefulShutdown {doShutdown} [tomcat-shutdown] Graceful shutdown complete
+2026-02-10 01:44:41,941 INFO o.s.o.j.AbstractEntityManagerFactoryBean {destroy} [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-10 01:44:41,946 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-02-10 01:44:41,951 INFO c.z.h.HikariDataSource {close} [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
