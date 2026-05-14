@@ -46,9 +46,14 @@ jobs:
       - name: Wait for API to start
         run: |
           echo "Waiting for API..."
-          for i in {1..30}; do
-            curl -s http://localhost:8081/schools && break
-            sleep 3
+          for i in {1..60}; do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8081/schools)
+            echo "Attempt $i - Status: $STATUS"
+            if [ "$STATUS" = "200" ]; then
+              echo "API is up!"
+              break
+            fi
+            sleep 5
           done
 
       - name: Create admin user and get token
@@ -61,7 +66,9 @@ jobs:
             -H "Content-Type: application/json" \
             -d '{"username":"admin","password":"admin123"}' | grep -o '"token":"[^"]*"' | cut -d'"' -f4)
 
+          echo "Token: $TOKEN"
           sed -i 's/"key": "token", "value": ""/"key": "token", "value": "'"$TOKEN"'"/' hoppscotch-env.json
+          cat hoppscotch-env.json
 
       - name: Install Hopp CLI
         run: npm install -g @hoppscotch/cli
