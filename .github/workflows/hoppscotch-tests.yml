@@ -55,4 +55,4 @@ jobs:
         run: npm install -g @hoppscotch/cli
 
       - name: Run Hoppscotch tests
-        run: hopp test hoppscotch-collection.json --env-file hoppscotch-env.json
+        run: hopp test hoppscotch-collection.json -e hoppscotch-env.json
