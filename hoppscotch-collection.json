@@ -162,7 +162,7 @@
           },
           "body": {
             "contentType": "application/json",
-            "body": "{\n  \"name\": \"IES Itaca\",\n  \"city\": \"Zaragoza\",\n  \"students\": 350,\n  \"publicSchool\": true,\n  \"registerDate\": \"2024-09-01\"\n}"
+            "body": "{\n  \"name\": \"IES Test School\",\n  \"city\": \"Zaragoza\",\n  \"students\": 350,\n  \"publicSchool\": true,\n  \"registerDate\": \"2024-09-01\"\n}"
           },
           "requestVariables": [],
           "responses": {}
@@ -257,7 +257,7 @@
           "params": [],
           "headers": [],
           "preRequestScript": "",
-          "testScript": "pw.test(\"Status code is 400\", () => {\n    pw.expect(pw.response.status).toBe(400);\n});\n\npw.test(\"Response has code 400\", () => {\n    pw.expect(pw.response.body.code).toBe(400);\n});\n\npw.test(\"Error mentions name field\", () => {\n    pw.expect(pw.response.body.errorMessages.name).not.toBe(undefined);\n});\n\npw.test(\"Students updated\", () => {\n    pw.expect(pw.response.body.students).toBe(400);\n});",
+          "testScript": "pw.test(\"Status code is 400\", () => {\n    pw.expect(pw.response.status).toBe(400);\n});\n\npw.test(\"Response has code 400\", () => {\n    pw.expect(pw.response.body.code).toBe(400);\n});\n\npw.test(\"Error mentions name field\", () => {\n    pw.expect(pw.response.body.errorMessages.name).not.toBe(undefined);\n});\n\n",
           "auth": {
             "authType": "bearer",
             "token": "<<token>>",
@@ -295,7 +295,7 @@
           "v": "11",
           "name": "DELETEschools {id}204",
           "method": "DELETE",
-          "endpoint": "<<baseUrl>>/schools/19",
+          "endpoint": "<<baseUrl>>/schools/<<schoolId>>",
           "params": [],
           "headers": [],
           "preRequestScript": "",
