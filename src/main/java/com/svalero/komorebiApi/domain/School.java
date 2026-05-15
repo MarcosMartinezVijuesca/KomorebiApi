@@ -38,6 +38,7 @@ public class School {
 
     @Column(name = "register_date")
     private LocalDate registerDate;
+    //prueba pull request
 
     @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonBackReference
