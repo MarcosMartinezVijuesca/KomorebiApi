@@ -39,15 +39,21 @@ jobs:
 
       - name: Build API
         run: ./mvnw package -DskipTests
+        env:
+          SPRING_CONFIG_IMPORT: "optional:configserver:"
 
       - name: Start API
-        run: ./mvnw spring-boot:run &
+        run: ./mvnw spring-boot:run > /tmp/api.log 2>&1 &
         env:
+          SPRING_CONFIG_IMPORT: "optional:configserver:"
           SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
           SPRING_DATASOURCE_USERNAME: root
           SPRING_DATASOURCE_PASSWORD: 25092010
+          SPRING_DATASOURCE_DRIVER_CLASS_NAME: com.mysql.cj.jdbc.Driver
+          SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.MySQLDialect
+          SPRING_JPA_HIBERNATE_DDL_AUTO: update
           JWT_SECRET: komorebi-super-secret-key-2025-svalero-dam
-          JWT_EXPIRATION: 86400000
+          JWT_EXPIRATION: "86400000"
 
       - name: Wait for API to start
         run: |
@@ -62,6 +68,8 @@ jobs:
             sleep 5
           done
           echo "API did not start in time"
+          echo "=== API LOGS ==="
+          cat /tmp/api.log
           exit 1
 
       - name: Create admin user and get token
