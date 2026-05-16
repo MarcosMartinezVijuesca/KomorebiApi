@@ -10,6 +10,20 @@ jobs:
   api-tests:
     runs-on: ubuntu-latest
 
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: 25092010
+          MYSQL_DATABASE: komorebidb
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -25,23 +39,15 @@ jobs:
 
       - name: Build API
         run: ./mvnw package -DskipTests
-        env:
-          SPRING_CONFIG_IMPORT: "optional:"
+
       - name: Start API
-        run: |
-          java \
-            -DSPRING_PROFILES_ACTIVE=dev \
-            -DSPRING_CONFIG_IMPORT=optional: \
-            -DSPRING_DATASOURCE_URL=jdbc:h2:mem:komorebidb \
-            -DSPRING_DATASOURCE_DRIVER_CLASS_NAME=org.h2.Driver \
-            -DSPRING_DATASOURCE_USERNAME=sa \
-            -DSPRING_DATASOURCE_PASSWORD= \
-            -DSPRING_JPA_DATABASE_PLATFORM=org.hibernate.dialect.H2Dialect \
-            -DSPRING_JPA_HIBERNATE_DDL_AUTO=create-drop \
-            -DJWT_SECRET=komorebi-super-secret-key-2025-svalero-dam \
-            -DJWT_EXPIRATION=86400000 \
-            -jar target/komorebiApi-0.0.1-SNAPSHOT.jar &
-      
+        run: ./mvnw spring-boot:run &
+        env:
+          SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/komorebidb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+          SPRING_DATASOURCE_USERNAME: root
+          SPRING_DATASOURCE_PASSWORD: 25092010
+          JWT_SECRET: komorebi-super-secret-key-2025-svalero-dam
+          JWT_EXPIRATION: 86400000
 
       - name: Wait for API to start
         run: |
