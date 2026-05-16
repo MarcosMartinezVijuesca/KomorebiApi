@@ -418,8 +418,8 @@
           "testScript": "pw.test(\"Status code is 200\", () => {\n    pw.expect(pw.response.status).toBe(200);\n});\n\npw.test(\"Name updated\", () => {\n    pw.expect(pw.response.body.name).toBe(\"Science Fair 2025 UPDATED\");\n});\n\npw.test(\"ODS updated\", () => {\n    pw.expect(pw.response.body.ods).toBe(5);\n});\n\npw.test(\"Active updated\", () => {\n    pw.expect(pw.response.body.active).toBe(false);\n});",
           "auth": {
             "authType": "bearer",
-            "authActive": true,
-            "token": "<<token>>"
+            "token": "<<token>>",
+            "authActive": true
           },
           "body": {
             "contentType": "application/json",
@@ -439,8 +439,8 @@
           "testScript": "pw.test(\"Status code is 400\", () => {\n    pw.expect(pw.response.status).toBe(400);\n});\n\npw.test(\"Response has code 400\", () => {\n    pw.expect(pw.response.body.code).toBe(400);\n});\n\npw.test(\"Error mentions name field\", () => {\n    pw.expect(pw.response.body.errorMessages.name).not.toBe(undefined);\n});",
           "auth": {
             "authType": "bearer",
-            "authActive": true,
-            "token": "<<token>>"
+            "token": "<<token>>",
+            "authActive": true
           },
           "body": {
             "contentType": "application/json",
@@ -460,8 +460,8 @@
           "testScript": "pw.test(\"Status code is 404\", () => {\n    pw.expect(pw.response.status).toBe(404);\n});\n\npw.test(\"Response has code 404\", () => {\n    pw.expect(pw.response.body.code).toBe(404);\n});\n\npw.test(\"Response has message\", () => {\n    pw.expect(pw.response.body.message).not.toBe(undefined);\n});",
           "auth": {
             "authType": "bearer",
-            "authActive": true,
-            "token": "<<token>>"
+            "token": "<<token>>",
+            "authActive": true
           },
           "body": {
             "contentType": "application/json",
@@ -481,8 +481,8 @@
           "testScript": "pw.test(\"Status code is 204\", () => {\n    pw.expect(pw.response.status).toBe(204);\n});",
           "auth": {
             "authType": "bearer",
-            "authActive": true,
-            "token": "<<token>>"
+            "token": "<<token>>",
+            "authActive": true
           },
           "body": {
             "contentType": "application/json",
@@ -502,8 +502,8 @@
           "testScript": "pw.test(\"Status code is 404\", () => {\n    pw.expect(pw.response.status).toBe(404);\n});\n\npw.test(\"Response has code 404\", () => {\n    pw.expect(pw.response.body.code).toBe(404);\n});\n\npw.test(\"Response has message\", () => {\n    pw.expect(pw.response.body.message).not.toBe(undefined);\n});",
           "auth": {
             "authType": "bearer",
-            "authActive": true,
-            "token": "<<token>>"
+            "token": "<<token>>",
+            "authActive": true
           },
           "body": {
             "contentType": "application/json",
@@ -574,6 +574,40 @@
       },
       "headers": [],
       "_ref_id": "coll_mp5y8lgx_9c557ff0-66dd-4bb9-af26-5839f9e8e6b5"
+    },
+    {
+      "v": 6,
+      "name": "Users",
+      "folders": [],
+      "requests": [
+        {
+          "v": "11",
+          "name": "GET users",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/users/count",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "pw.test(\"Status code is 200\", () => {\n    pw.expect(pw.response.status).toBe(200);\n});\n\npw.test(\"Response is a number\", () => {\n    pw.expect(typeof pw.response.body).toBe(\"number\");\n});",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<token>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": ""
+          },
+          "requestVariables": [],
+          "responses": {}
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "_ref_id": "coll_mp830sxs_d1c56dff-e3b0-40b1-8b18-eaaf3bc08449"
     }
   ],
   "requests": [],
